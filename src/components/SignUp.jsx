@@ -88,6 +88,18 @@ const SignUp = () => {
                   required
                 />
               </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Confirm Password</span>
+                </label>
+                <input
+                  type="text"
+                  name="confirm"
+                  placeholder="password"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
 
               <div className="form-control">
                 <label className="label">

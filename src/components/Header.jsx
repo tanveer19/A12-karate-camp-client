@@ -13,7 +13,6 @@ const Header = () => {
 
   const navOptions = (
     <>
-      <li></li>
       <li>
         <Link to="/">Home</Link>
       </li>
@@ -55,7 +54,7 @@ const Header = () => {
     </>
   );
   return (
-    <div className="navbar bg-sky-600">
+    <div className="navbar bg-[#06b6d4] ">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -81,13 +80,13 @@ const Header = () => {
             {navOptions}
           </ul>
         </div>
-        <Link to="/">
-          <img src="/images/camp-logo.png" alt="" />
-        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navOptions}</ul>
       </div>
+      <Link to="/">
+        <img src="/images/camp-logo.png" alt="" />
+      </Link>
     </div>
   );
 };
