@@ -4,11 +4,8 @@ const Footer = () => {
   return (
     <footer className="footer footer-center p-10 bg-sky-600 text-black">
       <div>
-        <h3 className="text-5xl font-bold">Toy Story Ltd.</h3>
-        <p className="font-bold">
-          <br />
-          Providing reliable toys since 1986
-        </p>
+        <h3 className="text-5xl font-bold">Summer Camp Karate</h3>
+
         <p>Copyright © 2023 - All right reserved</p>
       </div>
       <div>

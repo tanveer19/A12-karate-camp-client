@@ -13,29 +13,20 @@ const Header = () => {
 
   const navOptions = (
     <>
-      <li>
-        <Link to="/">
-          <img src="/images/camp-logo.png" alt="" />
-        </Link>
-      </li>
+      <li></li>
       <li>
         <Link to="/">Home</Link>
       </li>
-
+      {user && (
+        <li>
+          <Link to="/dashboard">Dashboard</Link>
+        </li>
+      )}
       <li>
-        <Link to="/alltoys">All Toys</Link>
+        <Link to="/Instructors">Instructors</Link>
       </li>
       <li>
-        <Link to="/addatoy">Add A Toy</Link>
-      </li>
-      <li>
-        <Link to="/mytoys">My Toys</Link>
-      </li>
-      <li>
-        <Link to="/shopbycategory">Shop by Category</Link>
-      </li>
-      <li>
-        <Link to="/blogs">Blog</Link>
+        <Link to="/classes">Classes</Link>
       </li>
       {user && (
         <li>
@@ -90,8 +81,8 @@ const Header = () => {
             {navOptions}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
-          Toy Story
+        <Link to="/">
+          <img src="/images/camp-logo.png" alt="" />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
