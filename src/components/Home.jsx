@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Instructors from "./Instructors";
 
 const Home = () => {
+  const [instructors, setInstructors] = useState([]);
+
+  useEffect(() => {
+    fetch(
+      "https://2-21-a12-summer-camp-server-tanveer19.vercel.app/instructors"
+    )
+      .then((res) => res.json())
+      .then((data) => setInstructors(data))
+      .catch((error) => console.error(error));
+  }, []);
   return (
     <div>
       {/* Carousel */}
@@ -48,6 +59,19 @@ const Home = () => {
               ❯
             </a>
           </div>
+        </div>
+      </div>
+
+      {/* instructors section */}
+      <div>
+        <h4 className="text-5xl text-center my-3"> All Instructors</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 md:w-3/4 mx-auto p-2">
+          {instructors.map((instructor) => (
+            <Instructors
+              key={instructor._id}
+              instructor={instructor}
+            ></Instructors>
+          ))}
         </div>
       </div>
     </div>

@@ -1,0 +1,32 @@
+[
+  {
+    "Name": "Masutatsu Oyama",
+    "Picture": "https://mutekikyokushin.com/wp-content/uploads/2019/08/Masutatsu-Oyama.jpg",
+    "Email": "a@k.com"
+  },
+  {
+    "Name": "Kancho Hatsuo Royama",
+    "Picture": "https://www.kwunion.com/wp-content/uploads/3e5250_da8c9bd435f64788bfb6d5678e523376.jpg",
+    "Email": "b@k.com"
+  },
+  {
+    "Name": "Shihan Francisco Filho",
+    "Picture": "https://images.tapology.com/letterbox_images/249847/default/Screen_Shot_2021-08-20_at_2.31.32_AM.png",
+    "Email": "c@k.com"
+  },
+  {
+    "Name": "Shihan Kenji Midori",
+    "Picture": "https://www.karatebielanski.com.pl/uploads/images/kyokushin/midori/midori_1.jpg",
+    "Email": "d@k.com"
+  },
+  {
+    "Name": "Shihan Kazuyuki Hasegawa",
+    "Picture": "https://kyokushinkaiindia.com/wp-content/uploads/2017/08/bg-1.jpg",
+    "Email": "e@k.com"
+  },
+  {
+    "Name": "Shihan Daigo Oishi",
+    "Picture": "https://sokyokushinindonesia.com/wp-content/uploads/2020/07/daigo-ohishi6.jpeg",
+    "Email": "f@k.com"
+  }
+]
