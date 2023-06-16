@@ -14,6 +14,7 @@ import SignUp from "./components/SignUp.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 import Profile from "./components/Profile";
 import Dashboard from "./components/Dashboard";
+import AddAClass from "./components/AddAClass";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Dashboard></Dashboard>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/AddAClass",
+        element: (
+          <PrivateRoute>
+            <AddAClass></AddAClass>
           </PrivateRoute>
         ),
       },

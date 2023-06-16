@@ -32,6 +32,11 @@ const Header = () => {
           <Link to="/profile">Profile</Link>
         </li>
       )}
+      {user && (
+        <li>
+          <Link to="/AddAClass">AddAClass</Link>
+        </li>
+      )}
 
       {user && (
         <div>
