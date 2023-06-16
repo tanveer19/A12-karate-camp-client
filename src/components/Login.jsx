@@ -54,9 +54,7 @@ const Login = () => {
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body text-center ">
               <form onSubmit={handleLogin}>
-                <h1 className="text-5xl font-bold">
-                  Login to Summer Camp Karate
-                </h1>
+                <h1 className="text-4xl font-bold">Login to Karate Camp</h1>
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Email</span>

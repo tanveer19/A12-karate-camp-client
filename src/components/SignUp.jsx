@@ -27,6 +27,14 @@ const SignUp = () => {
     const password = form.password.value;
     console.log(name, email, password);
 
+    // validate
+    if (!/(?=.*[A-Z])/.test(password)) {
+      setError("Please add at least one uppercase");
+      return;
+    } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+      setError("Please add at least one special character");
+      return;
+    }
     //3. create user in Firebase
     createUser(email, password)
       .then((result) => {
@@ -48,9 +56,7 @@ const SignUp = () => {
         <div className=" w-1/2 mr-12"></div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div className="card-body text-center">
-            <h1 className="text-5xl font-bold">
-              Sign Up for Summer Camp Karate
-            </h1>
+            <h1 className="text-4xl font-bold">Sign Up for Karate Camp</h1>
 
             <form onSubmit={handleSignUp}>
               <div className="form-control">
