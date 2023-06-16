@@ -64,13 +64,21 @@ const Home = () => {
 
       {/* instructors section */}
       <div>
-        <h4 className="text-5xl text-center my-3"> All Instructors</h4>
+        <h4 className="text-5xl text-center my-3"> Popular Instructors</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 md:w-3/4 mx-auto p-2">
           {instructors.map((instructor) => (
-            <Instructors
+            <div
               key={instructor._id}
-              instructor={instructor}
-            ></Instructors>
+              className="card w-96 h-96 m-2 bg-base-100 shadow-xl"
+            >
+              <figure>
+                <img src={instructor.Picture} alt="Shoes" />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">{instructor.Name}</h2>
+                <h4>Email: {instructor.Email}</h4>
+              </div>
+            </div>
           ))}
         </div>
       </div>
