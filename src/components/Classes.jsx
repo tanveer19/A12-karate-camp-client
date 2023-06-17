@@ -21,6 +21,7 @@ const Classes = () => {
           <table className="table table-xs">
             <thead>
               <tr>
+                <th>Select</th>
                 <th>Class Name</th>
                 <th>Class Image</th>
                 <th>Instructor Name</th>
@@ -34,6 +35,11 @@ const Classes = () => {
             <tbody>
               {classes?.map((data) => (
                 <tr key={data._id}>
+                  <th>
+                    <label>
+                      <input type="checkbox" className="checkbox" />
+                    </label>
+                  </th>
                   <td>{data.name}</td>
                   <td>
                     <div className="flex items-center space-x-3">
