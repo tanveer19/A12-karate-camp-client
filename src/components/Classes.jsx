@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { useSpring, animated } from "react-spring";
 
 const Classes = () => {
   const [classes, setclasses] = useState([]);
+
+  const springStyles = useSpring({
+    opacity: 1,
+    transform: "translateY(0)",
+    from: { opacity: 0, transform: "translateY(-10px)" },
+    delay: 200, // Optional delay before the animation starts
+  });
+
   useEffect(() => {
     fetch("https://2-21-a12-summer-camp-server-tanveer19.vercel.app/allclasses")
       .then((res) => res.json())
@@ -34,13 +43,20 @@ const Classes = () => {
 
             <tbody>
               {classes?.map((data) => (
-                <tr
+                <animated.tr
                   key={data._id}
-                  className={data.seats === 0 ? "bg-red-500" : ""}
+                  style={{
+                    ...springStyles,
+                    backgroundColor: data.seats === 0 ? "red" : "",
+                  }}
                 >
                   <th>
                     <label>
-                      <input type="checkbox" className="checkbox" />
+                      <input
+                        type="checkbox"
+                        className="checkbox"
+                        disabled={data.seats === 0}
+                      />
                     </label>
                   </th>
                   <td>{data.name}</td>
@@ -58,7 +74,7 @@ const Classes = () => {
                   <td>{data.seats}</td>
                   <td>{data.price}</td>
                   <td>{data.status}</td>
-                </tr>
+                </animated.tr>
               ))}
             </tbody>
           </table>
