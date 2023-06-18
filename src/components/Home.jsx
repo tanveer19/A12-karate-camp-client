@@ -1,15 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { animated, useSpring } from "@react-spring/web";
+import { useSpring, animated } from "react-spring";
 
 const Home = () => {
   const [instructors, setInstructors] = useState([]);
-
-  const springStyles = useSpring({
-    opacity: 1,
-    transform: "translateY(0)",
-    from: { opacity: 0, transform: "translateY(-10px)" },
-    delay: 200, // Optional delay before the animation starts
-  });
 
   useEffect(() => {
     fetch(
@@ -19,6 +12,13 @@ const Home = () => {
       .then((data) => setInstructors(data))
       .catch((error) => console.error(error));
   }, []);
+
+  const styles = useSpring({
+    // Define your animated styles here
+    background: "#ff6d6d",
+    borderRadius: 8,
+  });
+
   return (
     <div>
       {/* Carousel */}
@@ -70,7 +70,7 @@ const Home = () => {
       </div>
 
       {/* instructors section */}
-      <animated.div>
+      <div>
         <h4 className="text-5xl text-center my-3"> Popular Instructors</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 md:w-3/4 mx-auto p-2">
           {instructors.map((instructor) => (
@@ -88,10 +88,10 @@ const Home = () => {
             </div>
           ))}
         </div>
-      </animated.div>
+      </div>
 
       {/* accordion  */}
-      <animated.div>
+      <animated.div style={styles}>
         <h4 className="text-5xl text-center my-3"> Kyokushin Facts</h4>
 
         <div className="collapse collapse-plus bg-base-200">
