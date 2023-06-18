@@ -9,7 +9,7 @@ const Classes = () => {
       .then((result) => {
         setclasses(result);
       });
-  });
+  }, []); // <-- Added an empty dependency array to execute the effect only once
   return (
     <div>
       <Helmet>
@@ -34,7 +34,10 @@ const Classes = () => {
 
             <tbody>
               {classes?.map((data) => (
-                <tr key={data._id}>
+                <tr
+                  key={data._id}
+                  className={data.seats === 0 ? "bg-red-500" : ""}
+                >
                   <th>
                     <label>
                       <input type="checkbox" className="checkbox" />
