@@ -48,7 +48,10 @@ const Header = () => {
         {user ? (
           <>
             <span>{user.email}</span>
-            <button onClick={handleLogout} className="btn btn-xs">
+            <button
+              onClick={handleLogout}
+              className="btn btn-xs self-center w-fit"
+            >
               Sign out
             </button>
           </>
@@ -90,7 +93,7 @@ const Header = () => {
         <ul className="menu menu-horizontal px-1">{navOptions}</ul>
       </div>
       <Link to="/">
-        <img src="/images/camp-logo.png" alt="" />
+        <img src="/images/karate-camp.png" className="w-16" alt="" />
       </Link>
     </div>
   );
