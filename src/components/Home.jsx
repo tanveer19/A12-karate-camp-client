@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
+import SectionTitle from "./SectionTitle";
 
 const Home = () => {
   const [instructors, setInstructors] = useState([]);
@@ -71,7 +72,11 @@ const Home = () => {
 
       {/* instructors section */}
       <div>
-        <h4 className="text-5xl text-center my-3"> Popular Instructors</h4>
+        <SectionTitle
+          heading={"Popular Instructors"}
+          subHeading={"for cool students"}
+        ></SectionTitle>
+
         <div className="grid grid-cols-1 md:grid-cols-2 md:w-3/4 mx-auto p-2">
           {instructors.map((instructor) => (
             <div
@@ -92,7 +97,7 @@ const Home = () => {
 
       {/* accordion  */}
       <animated.div style={styles}>
-        <h4 className="text-5xl text-center my-3"> Kyokushin Facts</h4>
+        <SectionTitle heading={"Kyokushin Facts"}></SectionTitle>
 
         <div className="collapse collapse-plus bg-base-200">
           <input type="radio" name="my-accordion-3" checked="checked" />
