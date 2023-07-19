@@ -1,16 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { useSpring, animated } from "react-spring";
 
 const Classes = () => {
   const [classes, setclasses] = useState([]);
-
-  const springStyles = useSpring({
-    opacity: 1,
-    transform: "translateY(0)",
-    from: { opacity: 0, transform: "translateY(-10px)" },
-    delay: 200, // Optional delay before the animation starts
-  });
 
   useEffect(() => {
     fetch("https://2-21-a12-summer-camp-server-tanveer19.vercel.app/allclasses")
@@ -31,6 +23,7 @@ const Classes = () => {
             <thead>
               <tr>
                 <th>Select</th>
+                <th>#</th>
                 <th>Class Name</th>
                 <th>Class Image</th>
                 <th>Instructor Name</th>
@@ -42,15 +35,9 @@ const Classes = () => {
             </thead>
 
             <tbody>
-              {classes?.map((data) => (
-                <animated.tr
-                  key={data._id}
-                  style={{
-                    ...springStyles,
-                    backgroundColor: data.seats === 0 ? "red" : "",
-                  }}
-                >
-                  <th>
+              {classes?.map((data, index) => (
+                <tr key={data._id}>
+                  <td>
                     <label>
                       <input
                         type="checkbox"
@@ -58,7 +45,8 @@ const Classes = () => {
                         disabled={data.seats === 0}
                       />
                     </label>
-                  </th>
+                  </td>
+                  <td>{index + 1}</td>
                   <td>{data.name}</td>
                   <td>
                     <div className="flex items-center space-x-3">
@@ -74,7 +62,7 @@ const Classes = () => {
                   <td>{data.seats}</td>
                   <td>{data.price}</td>
                   <td>{data.status}</td>
-                </animated.tr>
+                </tr>
               ))}
             </tbody>
           </table>
