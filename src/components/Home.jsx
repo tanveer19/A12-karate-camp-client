@@ -99,7 +99,7 @@ const Home = () => {
       <SectionTitle heading={"Kyokushin Facts"}></SectionTitle>
 
       <div className="collapse collapse-plus bg-base-200">
-        <input type="radio" name="my-accordion-3" checked="checked" />
+        <input type="radio" name="my-accordion-3" />
         <div className="collapse-title text-xl font-medium">kyokushin belt</div>
         <div className="collapse-content">
           <p>
