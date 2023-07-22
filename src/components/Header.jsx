@@ -27,16 +27,14 @@ const Header = () => {
       <li>
         <Link to="/classes">Classes</Link>
       </li>
-      {user && (
-        <li>
-          <Link to="/profile">Profile</Link>
-        </li>
-      )}
-      {user && (
-        <li>
-          <Link to="/AddAClass">AddAClass</Link>
-        </li>
-      )}
+
+      <li>
+        <Link to="/profile">Profile</Link>
+      </li>
+
+      <li>
+        <Link to="/AddAClass">AddAClass</Link>
+      </li>
 
       {user && (
         <div>
