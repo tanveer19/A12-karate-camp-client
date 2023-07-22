@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
   // show user photo
@@ -39,6 +40,29 @@ const Login = () => {
         setError("");
 
         form.reset();
+
+        let timerInterval;
+        Swal.fire({
+          title: "Login Successful",
+          html: "I will close in <b></b> milliseconds.",
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: () => {
+            Swal.showLoading();
+            const b = Swal.getHtmlContainer().querySelector("b");
+            timerInterval = setInterval(() => {
+              b.textContent = Swal.getTimerLeft();
+            }, 100);
+          },
+          willClose: () => {
+            clearInterval(timerInterval);
+          },
+        }).then((result) => {
+          /* Read more about handling dismissals below */
+          if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
+          }
+        });
       })
       .catch((error) => {
         console.error(error.message);
@@ -105,7 +129,7 @@ const Login = () => {
               </form>
 
               <p className="my-4 text-center">
-                New to Summer Camp Karate?
+                New to Karate Camp ?
                 <Link className="text-orange-600 font-bold mx-2" to="/signup">
                   Sign Up
                 </Link>
