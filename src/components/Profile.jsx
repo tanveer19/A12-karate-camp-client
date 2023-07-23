@@ -10,7 +10,7 @@ const Profile = () => {
         <title>Summer Camp | Profile </title>
       </Helmet>
 
-      <div>My email: {user?.email}</div>
+      <div className=" w-fit mx-auto">Your email: {user?.email}</div>
     </div>
   );
 };
