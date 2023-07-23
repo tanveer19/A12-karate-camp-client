@@ -12,7 +12,7 @@ const SignUp = () => {
   //
   const [success, setSuccess] = useState("");
 
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
 
   const handleSignUp = (event) => {
     //1. prevent refresh
@@ -25,7 +25,8 @@ const SignUp = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, email, password);
+    const photoURL = form.photoURL.value;
+    console.log(name, email, password, photoURL);
 
     // validate
     if (!/(?=.*[A-Z])/.test(password)) {
