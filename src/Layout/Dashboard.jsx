@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import { FaHome, FaFistRaised } from "react-icons/fa";
 
 const Dashboard = () => {
@@ -23,14 +23,14 @@ const Dashboard = () => {
           <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
             {/* Sidebar content here */}
             <li>
-              <Link to="/">
+              <NavLink to="/dashboard/mycart">
                 <FaHome></FaHome>Home
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link>
+              <NavLink to="/dashboard/">
                 <FaFistRaised></FaFistRaised>Class
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
