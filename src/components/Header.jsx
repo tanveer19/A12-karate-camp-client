@@ -16,11 +16,11 @@ const Header = () => {
       <li>
         <Link to="/">Home</Link>
       </li>
-      {user && (
-        <li>
-          <Link to="/dashboard">Dashboard</Link>
-        </li>
-      )}
+
+      <li>
+        <Link to="/dashboard/mycart">Dashboard</Link>
+      </li>
+
       <li>
         <Link to="/Instructors">Instructors</Link>
       </li>
@@ -81,7 +81,7 @@ const Header = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             {navOptions}
           </ul>

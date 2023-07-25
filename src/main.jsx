@@ -13,8 +13,9 @@ import Login from "./components/Login.jsx";
 import SignUp from "./components/SignUp.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 import Profile from "./components/Profile";
-import Dashboard from "./components/Dashboard";
 import AddAClass from "./components/AddAClass";
+import MyCart from "./pages/Dashboard/MyCart/MyCart";
+import Dashboard from "./Layout/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,16 @@ const router = createBrowserRouter([
             <AddAClass></AddAClass>
           </PrivateRoute>
         ),
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path: "mycart",
+        element: <MyCart></MyCart>,
       },
     ],
   },
