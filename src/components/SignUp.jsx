@@ -1,18 +1,28 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { Link, useNavigate } from "react-router-dom";
+import { getAuth } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import { AuthContext } from "../providers/AuthProvider";
+import { useForm } from "react-hook-form";
 
 const auth = getAuth(app);
 
 const SignUp = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+
+  const navigate = useNavigate;
+
   // to get and show error in form
   const [error, setError] = useState("");
   //
   const [success, setSuccess] = useState("");
-
-  const { createUser, updateUserProfile } = useContext(AuthContext);
 
   const handleSignUp = (event) => {
     //1. prevent refresh
