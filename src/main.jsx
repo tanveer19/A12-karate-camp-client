@@ -14,8 +14,8 @@ import SignUp from "./components/SignUp.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 import Profile from "./components/Profile";
 import AddAClass from "./components/AddAClass";
-import MyCart from "./pages/Dashboard/MyCart/MyCart";
 import Dashboard from "./Layout/Dashboard";
+import MyClass from "./pages/Dashboard/MyCart/MyClass";
 
 const router = createBrowserRouter([
   {
@@ -74,8 +74,8 @@ const router = createBrowserRouter([
     element: <Dashboard></Dashboard>,
     children: [
       {
-        path: "mycart",
-        element: <MyCart></MyCart>,
+        path: "myclass",
+        element: <MyClass></MyClass>,
       },
     ],
   },
