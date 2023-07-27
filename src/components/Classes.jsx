@@ -32,7 +32,6 @@ const Classes = () => {
                 <th>Seats</th>
                 <th>Price</th>
                 <th>status</th>
-                <th>Action</th>
               </tr>
             </thead>
 
@@ -64,11 +63,6 @@ const Classes = () => {
                   <td>{data.seats}</td>
                   <td>{data.price}</td>
                   <td>{data.status}</td>
-                  <td>
-                    <button className="btn btn-ghost btn-lg">
-                      <FaTrashAlt></FaTrashAlt>
-                    </button>
-                  </td>
                 </tr>
               ))}
             </tbody>

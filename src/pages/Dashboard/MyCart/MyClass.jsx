@@ -1,4 +1,3 @@
-import { data } from "autoprefixer";
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { FaTrashAlt } from "react-icons/fa";
@@ -14,9 +13,9 @@ const MyClass = () => {
       .then((result) => {
         setclasses(result);
       });
-  }, []); // <-- Added an empty dependency array to execute the effect only once
+  }, [control]);
 
-  const handleDelete = (item) => {
+  const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -27,14 +26,14 @@ const MyClass = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/allclasses/${item._id}`, {
+        fetch(`http://localhost:5000/allclasses/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
-              setControl(!control);
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              setControl(!control);
             }
           });
       }
@@ -84,7 +83,7 @@ const MyClass = () => {
                 <td>{data.status}</td>
                 <td>
                   <button
-                    onClick={() => handleDelete(item)}
+                    onClick={() => handleDelete(data._id)}
                     className="btn btn-ghost btn-lg"
                   >
                     <FaTrashAlt></FaTrashAlt>
