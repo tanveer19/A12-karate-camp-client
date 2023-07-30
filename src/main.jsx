@@ -1,11 +1,9 @@
+import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout.jsx";
 import ErrorPage from "./error-page";
 import AuthProvider from "./providers/AuthProvider";
-import { HelmetProvider } from "react-helmet-async";
 import Home from "./components/Home";
 import Instructors from "./components/Instructors";
 import Classes from "./components/Classes";
@@ -16,6 +14,10 @@ import Profile from "./components/Profile";
 import AddAClass from "./components/AddAClass";
 import Dashboard from "./Layout/Dashboard";
 import MyClass from "./pages/Dashboard/MyCart/MyClass";
+import AllUsers from "./pages/Dashboard/AllUsers/AllUsers";
+import { HelmetProvider } from "react-helmet-async";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const router = createBrowserRouter([
   {
@@ -77,15 +79,22 @@ const router = createBrowserRouter([
         path: "myclass",
         element: <MyClass></MyClass>,
       },
+      {
+        path: "allusers",
+        element: <AllUsers></AllUsers>,
+      },
     ],
   },
 ]);
+const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
       <HelmetProvider>
-        <RouterProvider router={router} />
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={router} />
+        </QueryClientProvider>
       </HelmetProvider>
     </AuthProvider>
   </React.StrictMode>
