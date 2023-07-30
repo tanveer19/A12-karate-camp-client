@@ -69,10 +69,7 @@ const Home = () => {
 
       {/* instructors section */}
       <div>
-        <SectionTitle
-          heading={"Popular Instructors"}
-          subHeading={"for cool students"}
-        ></SectionTitle>
+        <SectionTitle heading={"Popular Instructors"}></SectionTitle>
 
         <div className="grid grid-cols-1 md:grid-cols-2 md:w-3/4 mx-auto p-2">
           {instructors.map((instructor) => (
