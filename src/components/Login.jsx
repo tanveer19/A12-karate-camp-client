@@ -4,6 +4,7 @@ import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
+import SocialLogin from "../pages/Shared/SocialLogin/SocialLogin";
 
 const Login = () => {
   // show user photo
@@ -139,6 +140,7 @@ const Login = () => {
                   Sign Up
                 </Link>
               </p>
+              {/* <SocialLogin></SocialLogin> */}
               <p className="bg-error">{error}</p>
             </div>
           </div>
