@@ -1,10 +1,12 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { FaHome, FaFistRaised, FaUsers } from "react-icons/fa";
+import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
   //TODO: load users from server to have dynamic isAdmin based on data
   const isAdmin = true;
+  // const [isAdmin] = useAdmin();
 
   return (
     <div>

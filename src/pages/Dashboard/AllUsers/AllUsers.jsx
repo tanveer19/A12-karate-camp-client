@@ -1,13 +1,19 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { FaTrashAlt, FaUserShield } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AllUsers = () => {
+  const token = localStorage.getItem("access-token");
+
   const { data: users = [], refetch } = useQuery(["users"], async () => {
-    const res = await fetch("http://localhost:5000/users");
+    const res = await fetch("http://localhost:5000/users", {
+      headers: { authorization: `bearer ${token}` },
+    });
     return res.json();
   });
+
   const handleMakeAdmin = (user) => {
     fetch(`http://localhost:5000/users/admin/${user._id}`, {
       method: "PATCH",
@@ -30,6 +36,9 @@ const AllUsers = () => {
   const handleDelete = (user) => {};
   return (
     <div className="w-full">
+      <button className="btn btn-accent flex m-auto ">
+        <Link to="/">Go to Home</Link>
+      </button>
       <h3 className="text-3xl text-center m-4">Total Users: {users.length}</h3>
       <div className="overflow-x-auto">
         <table className="table table-zebra">
