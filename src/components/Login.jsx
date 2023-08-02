@@ -4,8 +4,16 @@ import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { useForm } from "react-hook-form";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
   // show user photo
   const [user, setUser] = useState(null);
   // to get and show error in form
@@ -31,7 +39,7 @@ const Login = () => {
 
   const { signIn } = useContext(AuthContext);
 
-  const handleLogin = (event) => {
+  const onSubmit = (data) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
@@ -64,7 +72,6 @@ const Login = () => {
         }).then((result) => {
           /* Read more about handling dismissals below */
           if (result.dismiss === Swal.DismissReason.timer) {
-            console.log("I was closed by the timer");
           }
         });
         navigate(from, { replace: true });
@@ -77,34 +84,47 @@ const Login = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Karate Camp | Login</title>
+      </Helmet>
+
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left"></div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body text-center ">
-              <form onSubmit={handleLogin}>
-                <h1 className="text-4xl font-bold">Login to Karate Camp</h1>
+              <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Email</span>
                   </label>
                   <input
-                    type="text"
+                    type="email"
+                    {...register("email", { required: true })}
                     name="email"
                     placeholder="email"
                     className="input input-bordered"
                   />
+                  {errors.email && (
+                    <span className="text-red-600">Email is required</span>
+                  )}
                 </div>
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Password</span>
                   </label>
                   <input
-                    type="text"
-                    name="password"
+                    type="password"
+                    {...register("password", {
+                      required: true,
+                    })}
                     placeholder="password"
                     className="input input-bordered"
                   />
+                  {errors.password?.type === "required" && (
+                    <p className="text-red-600">Password is required</p>
+                  )}
+
                   <label className="label">
                     <a href="#" className="label-text-alt link link-hover">
                       Forgot password?
@@ -112,24 +132,29 @@ const Login = () => {
                   </label>
                 </div>
 
-                <div className="flex">
-                  <button
-                    onClick={handleGoogleSignIn}
-                    className="btn btn-success w-1/2 mx-auto"
-                  >
-                    Google Login
-                  </button>
-
-                  {user && (
-                    <div>
-                      <img src={user.photoURL} alt="" />
-                    </div>
-                  )}
-                </div>
                 <div className="form-control mt-6">
-                  <button className="btn btn-primary" type="submit">
-                    Login
-                  </button>
+                  <input
+                    className="btn btn-primary"
+                    type="submit"
+                    value="Login"
+                  />
+                </div>
+
+                <div className="form-control">
+                  <div className="flex">
+                    <button
+                      onClick={handleGoogleSignIn}
+                      className="btn btn-success w-1/2 mx-auto"
+                    >
+                      Google Login
+                    </button>
+
+                    {user && (
+                      <div>
+                        <img src={user.photoURL} alt="" />
+                      </div>
+                    )}
+                  </div>
                 </div>
               </form>
 
@@ -139,7 +164,6 @@ const Login = () => {
                   Sign Up
                 </Link>
               </p>
-              {/* <SocialLogin></SocialLogin> */}
               <p className="bg-error">{error}</p>
             </div>
           </div>
