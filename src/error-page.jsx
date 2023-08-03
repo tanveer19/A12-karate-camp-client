@@ -11,7 +11,7 @@ export default function ErrorPage() {
       className="flex flex-col w-1/2 items-center m-auto p-4"
     >
       <img
-        src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjJyanFxdXg5MmhqbTBlbmQ5bzVwMnF5YWowcXU1ZGk5b3YxNnNsYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/S8rEAbtG4WA2ULH7CH/giphy.gif"
+        src="https://media.giphy.com/media/14uQ3cOFteDaU/giphy.gif"
         alt="404"
         className="w-64 h-auto sm:w-96 md:w-128 lg:w-192 xl:w-256"
       />

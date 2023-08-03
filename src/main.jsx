@@ -13,11 +13,14 @@ import PrivateRoute from "./routes/PrivateRoute.jsx";
 import Profile from "./components/Profile";
 import AddAClass from "./components/AddAClass";
 import Dashboard from "./Layout/Dashboard";
-import MyClass from "./pages/Dashboard/MyCart/MyClass";
 import AllUsers from "./pages/Dashboard/AllUsers/AllUsers";
 import { HelmetProvider } from "react-helmet-async";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import StudenHome from "./pages/Dashboard/StudentHome/StudenHome";
+import AdminHome from "./pages/Dashboard/AdminHome/AdminHome";
+import MyClass from "./pages/Dashboard/MyClass/MyClass";
+import Payment from "./pages/Dashboard/Payment/Payment";
 
 const router = createBrowserRouter([
   {
@@ -82,6 +85,17 @@ const router = createBrowserRouter([
       {
         path: "myclass",
         element: <MyClass></MyClass>,
+      },
+      { path: "payment", element: <Payment></Payment> },
+      {
+        path: "studenthome",
+        element: <StudenHome></StudenHome>,
+      },
+
+      // admin routes
+      {
+        path: "adminhome",
+        element: <AdminHome></AdminHome>,
       },
       {
         path: "allusers",

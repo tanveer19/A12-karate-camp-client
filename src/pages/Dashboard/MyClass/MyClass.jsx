@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { FaTrashAlt } from "react-icons/fa";
+import { FaMoneyBill, FaMoneyCheck, FaTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyClass = () => {
@@ -59,6 +60,7 @@ const MyClass = () => {
               <th>Price</th>
               <th>status</th>
               <th>Action</th>
+              <th>Pay</th>
             </tr>
           </thead>
 
@@ -88,6 +90,13 @@ const MyClass = () => {
                   >
                     <FaTrashAlt></FaTrashAlt>
                   </button>
+                </td>
+                <td>
+                  <Link to="/dashboard/payment">
+                    <button className="btn btn-warning">
+                      <FaMoneyCheck></FaMoneyCheck>
+                    </button>
+                  </Link>
                 </td>
               </tr>
             ))}

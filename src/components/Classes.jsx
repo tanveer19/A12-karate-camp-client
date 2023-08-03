@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { FaTrashAlt } from "react-icons/fa";
 
 const Classes = () => {
   const [classes, setclasses] = useState([]);

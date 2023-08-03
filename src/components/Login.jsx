@@ -56,14 +56,14 @@ const Login = () => {
         let timerInterval;
         Swal.fire({
           title: "Login Successful",
-          html: "I will close in <b></b> milliseconds.",
+          // html: "I will close in <b></b> milliseconds.",
           timer: 3000,
           timerProgressBar: true,
           didOpen: () => {
             Swal.showLoading();
             const b = Swal.getHtmlContainer().querySelector("b");
             timerInterval = setInterval(() => {
-              b.textContent = Swal.getTimerLeft();
+              // b.textContent = Swal.getTimerLeft();
             }, 100);
           },
           willClose: () => {

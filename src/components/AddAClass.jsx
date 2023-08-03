@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddAClass = () => {
   const { user } = useContext(AuthContext);
@@ -21,6 +22,14 @@ const AddAClass = () => {
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
+
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Class Added successfully.",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       });
 
     console.log(data);
@@ -75,14 +84,6 @@ const AddAClass = () => {
           placeholder="status"
           {...register("status")}
         />
-
-        {/* include validation with required or other standard HTML validation rules */}
-        {/* <input
-      className="border rounded p-2 my-2"
-      {...register("exampleRequired", { required: true })}
-    /> */}
-        {/* errors will return when field validation fails  */}
-        {/* {errors.exampleRequired && <span>This field is required</span>} */}
 
         <input
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
