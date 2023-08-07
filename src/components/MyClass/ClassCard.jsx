@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { FaMoneyBill, FaMoneyCheck, FaTrashAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { FaMoneyCheck, FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
 
-const MyClass = () => {
+const ClassCard = (item) => {
+  const { _id, name, image, seats } = item;
+  const { user } = useContext(AuthContext);
+
   const [classes, setclasses] = useState([]);
   const [control, setControl] = useState("false");
 
   useEffect(() => {
-    fetch("http://localhost:5000/allclasses")
+    fetch("https://2-21-a12-summer-camp-server.vercel.app/allclasses")
       .then((res) => res.json())
       .then((result) => {
         setclasses(result);
@@ -27,9 +30,12 @@ const MyClass = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/allclasses/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://2-21-a12-summer-camp-server.vercel.app/allclasses/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -39,6 +45,51 @@ const MyClass = () => {
           });
       }
     });
+  };
+
+  const handleAddToCart = (item) => {
+    console.log(item);
+    if (user && user.email) {
+      const cartItem = {
+        classItemId: _id,
+        name,
+        image,
+        email: user.email,
+      };
+      fetch("https://2-21-a12-summer-camp-server.vercel.app/carts", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(cartItem),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.insertedId) {
+            refetch(); // refetch cart to update the number of items in the cart
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "class added on the cart.",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
+    } else {
+      Swal.fire({
+        title: "Please login to pay for class",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Login now!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/login", { state: { from: location } });
+        }
+      });
+    }
   };
   return (
     <div>
@@ -92,11 +143,12 @@ const MyClass = () => {
                   </button>
                 </td>
                 <td>
-                  <Link to="/dashboard/payment">
-                    <button className="btn btn-warning">
-                      <FaMoneyCheck></FaMoneyCheck>
-                    </button>
-                  </Link>
+                  <button
+                    onClick={() => handleAddToCart(item)}
+                    className="btn btn-outline bg-teal-100 mt-4"
+                  >
+                    Add to Cart
+                  </button>
                 </td>
               </tr>
             ))}
@@ -107,4 +159,4 @@ const MyClass = () => {
   );
 };
 
-export default MyClass;
+export default ClassCard;

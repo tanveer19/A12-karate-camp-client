@@ -19,8 +19,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import StudenHome from "./pages/Dashboard/StudentHome/StudenHome";
 import AdminHome from "./pages/Dashboard/AdminHome/AdminHome";
-import MyClass from "./pages/Dashboard/MyClass/MyClass";
 import Payment from "./pages/Dashboard/Payment/Payment";
+import Order from "./pages/Order/Order";
+import MyCart from "./pages/Dashboard/MyCart/MyCart";
+import ClassCard from "./components/MyClass/ClassCard";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,10 @@ const router = createBrowserRouter([
         element: <Classes></Classes>,
       },
       {
+        path: "/order",
+        element: <Order></Order>,
+      },
+      {
         path: "/login",
         element: <Login></Login>,
       },
@@ -57,7 +63,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/Dashboard",
+        path: "dashboard",
         element: (
           <PrivateRoute>
             <Dashboard></Dashboard>
@@ -83,8 +89,12 @@ const router = createBrowserRouter([
     ),
     children: [
       {
-        path: "myclass",
-        element: <MyClass></MyClass>,
+        path: "classcard",
+        element: <ClassCard></ClassCard>,
+      },
+      {
+        path: "mycart",
+        element: <MyCart></MyCart>,
       },
       { path: "payment", element: <Payment></Payment> },
       {

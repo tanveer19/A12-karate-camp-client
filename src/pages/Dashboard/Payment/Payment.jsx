@@ -1,5 +1,5 @@
 import { loadStripe } from "@stripe/stripe-js";
-import CheckoutForm from "./checkoutForm";
+import CheckoutForm from "./CheckoutForm";
 import { Elements } from "@stripe/react-stripe-js";
 import useCart from "../../../hooks/useCart";
 
@@ -12,7 +12,7 @@ const Payment = () => {
     <div>
       <h2 className="text-2xl">Payment for Summer Camp Karate Class</h2>
       <Elements stripe={stripePromise}>
-        <CheckoutForm price={price}></CheckoutForm>
+        <CheckoutForm cart={cart} price={price}></CheckoutForm>
       </Elements>
     </div>
   );

@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import { FaCartPlus } from "react-icons/fa";
+import useCart from "../hooks/useCart";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [cart] = useCart();
 
   const handleLogout = () => {
     logOut()
@@ -18,7 +21,7 @@ const Header = () => {
       </li>
 
       <li>
-        <Link to="/dashboard/myclass">Dashboard</Link>
+        <Link to="/dashboard/">Dashboard</Link>
       </li>
 
       <li>
@@ -26,6 +29,9 @@ const Header = () => {
       </li>
       <li>
         <Link to="/classes">Classes</Link>
+      </li>
+      <li>
+        <Link to="/order">Order</Link>
       </li>
 
       <li>
@@ -35,7 +41,14 @@ const Header = () => {
       <li>
         <Link to="/AddAClass">AddAClass</Link>
       </li>
-
+      <li>
+        <Link to="/dashboard/mycart">
+          <button className="btn gap-2">
+            <FaCartPlus></FaCartPlus>
+            <div className="badge badge-primary">+{cart?.length || 0}</div>
+          </button>
+        </Link>
+      </li>
       {user && (
         <div>
           <img src={user.photoURL} alt="" style={{ width: "60px" }} />
