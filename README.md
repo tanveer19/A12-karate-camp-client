@@ -1,14 +1,10 @@
-b712-summer-camp-client-side-tanveer19
+A12-karate-camp-client
 
-Assignment 12
-
-Website name : Karate Camp
-
-Minimum 5 points of your website features:
+website features:
 
 1. popular instructors in home page
 2. showing all users of website after going to dashboard
-3. add class
+3. add karate class
 4. sign up / login in website
 5. info about kyokushin karate
 
