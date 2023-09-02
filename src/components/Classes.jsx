@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 
-const Classes = () => {
+const Classes = (item) => {
   const [classes, setclasses] = useState([]);
+
+  const handleAddToCart = (data) => {
+    console.log(data);
+  };
 
   useEffect(() => {
     fetch("https://2-21-a12-summer-camp-server.vercel.app/allclasses")
@@ -31,6 +35,7 @@ const Classes = () => {
                 <th>Seats</th>
                 <th>Price</th>
                 <th>status</th>
+                <th>Add</th>
               </tr>
             </thead>
 
@@ -62,6 +67,14 @@ const Classes = () => {
                   <td>{data.seats}</td>
                   <td>{data.price}</td>
                   <td>{data.status}</td>
+                  <td>
+                    <button
+                      onClick={() => handleAddToCart(data)}
+                      className="btn btn-outline bg-teal-100 mt-4"
+                    >
+                      Add to Cart
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>

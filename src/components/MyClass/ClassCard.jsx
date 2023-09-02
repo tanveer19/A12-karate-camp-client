@@ -6,6 +6,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const ClassCard = (item) => {
   const { _id, name, image, seats } = item;
+
   const { user } = useContext(AuthContext);
 
   const [classes, setclasses] = useState([]);
