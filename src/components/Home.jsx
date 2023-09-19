@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import SectionTitle from "./SectionTitle";
 import Facts from "./Facts";
-import Gallery from "./Gallery";
+import Carousel from "./Carousel";
 import Hero from "./Hero";
 import Contact from "./Contact";
+import GridSection from "./Grid";
 
 const Home = () => {
   const [instructors, setInstructors] = useState([]);
 
   useEffect(() => {
-    fetch("https://2-21-a12-summer-camp-server.vercel.app/instructors")
+    fetch("http://localhost:5000/instructors")
       .then((res) => res.json())
 
       .then((data) => {
@@ -24,7 +25,7 @@ const Home = () => {
   return (
     <div>
       {/* Carousel */}
-      <div className="carousel w-full">
+      {/* <div className="carousel w-full">
         <div id="slide1" className="carousel-item relative w-full">
           <img src="/images/karate-1.jpg" className="w-full" />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -69,31 +70,33 @@ const Home = () => {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
+      <Carousel></Carousel>
 
       {/*POPULAR instructors section */}
-      <div className="w-2/3 mx-auto">
+      <div className="">
         <SectionTitle heading={"Popular Instructors"}></SectionTitle>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 md:w-3/4 mx-auto p-2">
-          {instructors.map((instructor) => (
-            <div
-              key={instructor._id}
-              className="card w-96 h-96 m-2 bg-base-100 shadow-xl"
-            >
-              <figure>
-                <img src={instructor.Picture} alt="Shoes" />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">{instructor.Name}</h2>
-                <h4>Email: {instructor.Email}</h4>
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {instructors.map((instructor) => (
+              <div
+                key={instructor._id}
+                className="card w-96 h-96 m-2 bg-base-100 shadow-xl"
+              >
+                <figure>
+                  <img src={instructor.Picture} alt="Shoes" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">{instructor.Name}</h2>
+                  <h4>Email: {instructor.Email}</h4>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-
-      <Gallery></Gallery>
+      {/* <GridSection></GridSection> */}
       <Facts></Facts>
       <Hero></Hero>
       <Contact></Contact>

@@ -2,7 +2,7 @@ import React from "react";
 import SectionTitle from "./SectionTitle";
 const Facts = () => {
   return (
-    <div className="w-1/2 mx-auto">
+    <div className="w-1/2 mx-auto my-5">
       <SectionTitle heading={"Kyokushin Facts"}></SectionTitle>
 
       <div className="collapse collapse-plus bg-base-200">

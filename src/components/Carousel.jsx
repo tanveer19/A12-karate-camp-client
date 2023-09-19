@@ -7,12 +7,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import "./Gallery.css";
+import "./Carousel.css";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
-export default function Gallery() {
+export default function Carousel() {
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const onAutoplayTimeLeft = (s, time, progress) => {
@@ -21,13 +21,11 @@ export default function Gallery() {
   };
   return (
     <div>
-      <h4 className="text-5xl text-center my-3"> Gallery</h4>
-
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 5000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -38,9 +36,6 @@ export default function Gallery() {
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <img src="/images/hero.jpg" className="rounded-box" />
-        </SwiperSlide>
         <SwiperSlide>
           <img src="/images/karate-3.jpg" className="rounded-box" />
         </SwiperSlide>

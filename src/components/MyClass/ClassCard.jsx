@@ -3,17 +3,18 @@ import { Helmet } from "react-helmet-async";
 import { FaMoneyCheck, FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const ClassCard = (item) => {
   const { _id, name, image, seats } = item;
-
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const [classes, setclasses] = useState([]);
   const [control, setControl] = useState("false");
 
   useEffect(() => {
-    fetch("https://2-21-a12-summer-camp-server.vercel.app/allclasses")
+    fetch("http://localhost:5000/allclasses")
       .then((res) => res.json())
       .then((result) => {
         setclasses(result);
@@ -31,12 +32,9 @@ const ClassCard = (item) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(
-          `https://2-21-a12-summer-camp-server.vercel.app/allclasses/${id}`,
-          {
-            method: "DELETE",
-          }
-        )
+        fetch(`http://localhost:5000/allclasses/${id}`, {
+          method: "DELETE",
+        })
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -57,7 +55,7 @@ const ClassCard = (item) => {
         image,
         email: user.email,
       };
-      fetch("https://2-21-a12-summer-camp-server.vercel.app/carts", {
+      fetch("http://localhost:5000/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",

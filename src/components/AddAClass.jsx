@@ -14,7 +14,7 @@ const AddAClass = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    fetch("https://2-21-a12-summer-camp-server.vercel.app/postClasses", {
+    fetch("http://localhost:5000/postClasses", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
