@@ -14,7 +14,7 @@ const ClassCard = (item) => {
   const [control, setControl] = useState("false");
 
   useEffect(() => {
-    fetch("http://localhost:5000/allclasses")
+    fetch("https://2-21-a12-summer-camp-server.vercel.app/allclasses")
       .then((res) => res.json())
       .then((result) => {
         setclasses(result);
@@ -32,9 +32,12 @@ const ClassCard = (item) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/allclasses/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://2-21-a12-summer-camp-server.vercel.app/allclasses/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -55,7 +58,7 @@ const ClassCard = (item) => {
         image,
         email: user.email,
       };
-      fetch("http://localhost:5000/carts", {
+      fetch("https://2-21-a12-summer-camp-server.vercel.app/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",

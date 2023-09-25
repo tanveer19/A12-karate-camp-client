@@ -5,72 +5,30 @@ import Carousel from "./Carousel";
 import Hero from "./Hero";
 import Contact from "./Contact";
 import GridSection from "./Grid";
+import useInstructors from "../hooks/useInstructors";
 
 const Home = () => {
-  const [instructors, setInstructors] = useState([]);
+  const [instructors] = useInstructors();
+  const popular = instructors.filter((item) => item.category === "popular");
+  // const [instructors, setInstructors] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:5000/instructors")
-      .then((res) => res.json())
+  // useEffect(() => {
+  //   fetch("https://2-21-a12-summer-camp-server.vercel.app/instructors")
+  //     .then((res) => res.json())
 
-      .then((data) => {
-        const popularInstructors = data.filter(
-          (item) => item.Category === "popular"
-        );
+  //     .then((data) => {
+  //       const popularInstructors = data.filter(
+  //         (item) => item.Category === "popular"
+  //       );
 
-        setInstructors(popularInstructors);
-      });
-  }, []);
+  //       setInstructors(popularInstructors);
+  //     });
+  // }, []);
 
   return (
     <div>
       {/* Carousel */}
-      {/* <div className="carousel w-full">
-        <div id="slide1" className="carousel-item relative w-full">
-          <img src="/images/karate-1.jpg" className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide4" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide2" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide2" className="carousel-item relative w-full">
-          <img src="/images/karate-2.jpg" className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide1" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide3" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide3" className="carousel-item relative w-full">
-          <img src="/images/karate-3.jpg" className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide2" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide4" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide4" className="carousel-item relative w-full">
-          <img src="/images/karate-1.jpg" className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide3" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide1" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-      </div> */}
+
       <Carousel></Carousel>
 
       {/*POPULAR instructors section */}
