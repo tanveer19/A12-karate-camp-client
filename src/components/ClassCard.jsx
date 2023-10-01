@@ -8,6 +8,9 @@ const ClassCard = ({ item }) => {
         <figure>
           <img src={image} alt="karate" />
         </figure>
+        <p className="bg-teal-600 text-white absolute mt-4 ml-4 px-2 rounded-md">
+          ${price}
+        </p>
         <div className="card-body">
           <h2 className="card-title">Class Name: {name}</h2>
           <p>Description: {}</p>

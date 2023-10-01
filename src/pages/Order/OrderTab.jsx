@@ -6,7 +6,7 @@ const OrderTab = ({ items }) => {
     <div>
       <div className="grid md:grid-cols-3">
         {items.map((item) => (
-          <div className="mx-auto my-auto" key={item._id}>
+          <div className="flex justify-center items-center" key={item._id}>
             <ClassCard item={item}></ClassCard>
           </div>
         ))}

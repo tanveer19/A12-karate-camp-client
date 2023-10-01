@@ -5,10 +5,15 @@ import useClasses from "../../hooks/useClasses";
 import ClassCard from "../../components/ClassCard";
 import OrderTab from "./OrderTab";
 import { Helmet } from "react-helmet-async";
+import Cover from "../Shared/Cover";
+import orderCoverImg from "/images/order.jpg";
+import { useParams } from "react-router-dom";
 
 const Order = () => {
   const [tabIndex, setTtabIndex] = useState(0);
   const [classes] = useClasses();
+  const { category } = useParams();
+  console.log(category);
   const japan = classes.filter((item) => item.category === "japan");
   const korea = classes.filter((item) => item.category === "korea");
   const china = classes.filter((item) => item.category === "china");
@@ -19,6 +24,7 @@ const Order = () => {
       <Helmet>
         <title>Karate Camp | Order </title>
       </Helmet>
+      <Cover img={orderCoverImg} title="Order Class"></Cover>
       <Tabs defaultIndex={tabIndex} onSelect={(index) => setTtabIndex(index)}>
         <TabList>
           <Tab>Japan</Tab>
