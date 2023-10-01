@@ -59,6 +59,11 @@ const AddAClass = () => {
         />
         <input
           className="border rounded p-2 my-2"
+          placeholder="category "
+          {...register("category")}
+        />
+        <input
+          className="border rounded p-2 my-2"
           placeholder="Instructor  Name "
           {...register("InstructorName")}
         />

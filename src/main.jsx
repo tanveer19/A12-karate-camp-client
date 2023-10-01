@@ -22,7 +22,8 @@ import AdminHome from "./pages/Dashboard/AdminHome/AdminHome";
 import Payment from "./pages/Dashboard/Payment/Payment";
 import Order from "./pages/Order/Order";
 import MyCart from "./pages/Dashboard/MyCart/MyCart";
-import ClassCard from "./components/MyClass/ClassCard";
+import ClassCard from "./components/ClassCard";
+import Class from "./components/Class";
 
 const router = createBrowserRouter([
   {
@@ -39,11 +40,19 @@ const router = createBrowserRouter([
         element: <Instructors></Instructors>,
       },
       {
+        path: "/class",
+        element: <Class></Class>,
+      },
+      {
         path: "/classes",
         element: <Classes></Classes>,
       },
       {
         path: "/order",
+        element: <Order></Order>,
+      },
+      {
+        path: "/order/:category",
         element: <Order></Order>,
       },
       {

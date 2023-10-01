@@ -14,11 +14,11 @@ const Classes = (item) => {
       .then((result) => {
         setclasses(result);
       });
-  }, []); // <-- Added an empty dependency array to execute the effect only once
+  }, []);
   return (
     <div>
       <Helmet>
-        <title>Karate Camp | All classes </title>
+        <title>Karate Camp | Classes </title>
       </Helmet>
 
       <div>

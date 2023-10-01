@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
-const ClassCard = (item) => {
+const ClassCardOLD = (item) => {
   const { _id, name, image, seats } = item;
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -161,4 +161,4 @@ const ClassCard = (item) => {
   );
 };
 
-export default ClassCard;
+export default ClassCardOLD;
