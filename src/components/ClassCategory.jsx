@@ -14,11 +14,13 @@ const ClassCategory = ({ items, title, img }) => {
             </div>
           ))}
         </div>
-        <Link to={`/order/${title}`}>
-          <button className="btn btn-outline border-0 border-b-4 mt-4">
-            Order Now
-          </button>
-        </Link>
+        <div className="flex justify-center">
+          <Link to={`/order/${title}`}>
+            <button className="btn btn-outline border-l-2 border-r-2 border-0 my-4">
+              Order Now
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

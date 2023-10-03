@@ -10,10 +10,12 @@ import orderCoverImg from "/images/order.jpg";
 import { useParams } from "react-router-dom";
 
 const Order = () => {
-  const [tabIndex, setTtabIndex] = useState(0);
-  const [classes] = useClasses();
+  const categories = ["japan", "korea", "china", "bangladesh", "taiwan"];
   const { category } = useParams();
-  console.log(category);
+  const initialIndex = categories.indexOf(category);
+  const [tabIndex, setTtabIndex] = useState(initialIndex);
+  const [classes] = useClasses();
+
   const japan = classes.filter((item) => item.category === "japan");
   const korea = classes.filter((item) => item.category === "korea");
   const china = classes.filter((item) => item.category === "china");

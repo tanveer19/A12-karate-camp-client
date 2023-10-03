@@ -34,7 +34,7 @@ const Header = () => {
         <Link to="/classes">Classes</Link>
       </li>
       <li>
-        <Link to="/order">Order</Link>
+        <Link to="/order/japan">Order</Link>
       </li>
 
       <li>
@@ -76,7 +76,7 @@ const Header = () => {
     </>
   );
   return (
-    <div className="navbar  bg-opacity-30 bg-black text-white">
+    <div className="navbar bg-opacity-30 bg-black text-white">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

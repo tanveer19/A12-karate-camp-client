@@ -11,11 +11,13 @@ const ClassCard = ({ item }) => {
         <p className="bg-teal-600 text-white absolute mt-4 ml-4 px-2 rounded-md">
           ${price}
         </p>
-        <div className="card-body">
+        <div className="card-body flex flex-col items-center">
           <h2 className="card-title">Class Name: {name}</h2>
           <p>Description: {}</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Add to Cart</button>
+            <button className="btn btn-outline border-l-2 border-r-2 border-0">
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
