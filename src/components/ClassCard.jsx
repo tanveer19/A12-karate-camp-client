@@ -1,17 +1,31 @@
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const ClassCard = ({ item }) => {
-  const { name, image, price } = item;
+  const { name, image, price, _id } = item;
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleAddToCart = (item) => {
     console.log(item);
-    if (user) {
-      fetch("https://2-21-a12-summer-camp-server.vercel.app/carts")
+    if (user && user.email) {
+      const cartItem = {
+        classItemId: _id,
+        name,
+        image,
+        price,
+        email: user.email,
+      };
+      fetch("https://2-21-a12-summer-camp-server.vercel.app/carts", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(cartItem),
+      })
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId) {
@@ -34,7 +48,7 @@ const ClassCard = ({ item }) => {
         confirmButtonText: "Login now",
       }).then((result) => {
         if (result.isConfirmed) {
-          navigate("/login");
+          navigate("/login", { state: { from: location } });
         }
       });
     }
