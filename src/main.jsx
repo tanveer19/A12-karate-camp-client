@@ -24,11 +24,12 @@ import Order from "./pages/Order/Order";
 import MyCart from "./pages/Dashboard/MyCart/MyCart";
 import ClassCard from "./components/ClassCard";
 import Class from "./components/Class";
+import Main from "./Layout/Main";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout></Layout>,
+    element: <Main></Main>,
     errorElement: <ErrorPage />,
     children: [
       {
@@ -71,14 +72,14 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      {
-        path: "dashboard",
-        element: (
-          <PrivateRoute>
-            <Dashboard></Dashboard>
-          </PrivateRoute>
-        ),
-      },
+      // {
+      //   path: "dashboard",
+      //   element: (
+      //     <PrivateRoute>
+      //       <Dashboard></Dashboard>
+      //     </PrivateRoute>
+      //   ),
+      // },
       {
         path: "/AddAClass",
         element: (
