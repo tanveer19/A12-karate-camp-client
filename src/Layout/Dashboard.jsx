@@ -7,7 +7,9 @@ import {
   MdShoppingCart,
   MdWallet,
 } from "react-icons/md";
+import useCart from "../hooks/useCart";
 const Dashboard = () => {
+  const [cart] = useCart();
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -46,6 +48,7 @@ const Dashboard = () => {
           <li>
             <NavLink to="/dashboard/mycart">
               <MdShoppingCart></MdShoppingCart> My Cart
+              <span className="badge badge-primary">+{cart?.length || 0}</span>
             </NavLink>
           </li>
           <div className="divider"></div>
@@ -60,8 +63,6 @@ const Dashboard = () => {
           <li>
             <NavLink to="/order/japan"> Order class</NavLink>
           </li>
-          <li></li>
-          <li></li>
         </ul>
       </div>
     </div>

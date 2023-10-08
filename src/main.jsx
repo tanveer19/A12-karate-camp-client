@@ -72,14 +72,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      // {
-      //   path: "dashboard",
-      //   element: (
-      //     <PrivateRoute>
-      //       <Dashboard></Dashboard>
-      //     </PrivateRoute>
-      //   ),
-      // },
+
       {
         path: "/AddAClass",
         element: (

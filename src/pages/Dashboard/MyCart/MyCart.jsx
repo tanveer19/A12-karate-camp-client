@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const MyCart = () => {
   const [cart, refetch] = useCart();
-  console.log(cart);
+  // console.log(cart);
 
   const total = cart.reduce((sum, item) => sum + parseFloat(item.price), 0);
 
@@ -31,7 +31,7 @@ const MyCart = () => {
           .then((data) => {
             if (data.deletedCount > 0) {
               refetch();
-              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              Swal.fire("Deleted!", "Your class has been deleted.", "success");
             }
           });
       }
@@ -43,21 +43,23 @@ const MyCart = () => {
       <Helmet>
         <title>Karate Camp | My Cart</title>
       </Helmet>
-      <div className="uppercase font-semibold h-[60px] flex justify-evenly mr-10">
+      <div className=" font-semibold h-[60px] flex justify-evenly mr-8">
         <h3 className="text-xl">Total Classes: {cart.length}</h3>
         <h3 className="text-xl">Total Price: ${total}</h3>
         <Link to="/dashboard/payment">
           <button className="btn btn-info btn-sm">PAY</button>
         </Link>
       </div>
-      <div className="overflow-x-auto w-full">
-        <table className="table w-full">
+
+      {/* table */}
+      <div className="overflow-x-auto">
+        <table className="table table-xs border-4">
           {/* head */}
           <thead>
             <tr>
               <th>#</th>
-              <th>Class</th>
-              <th>seats</th>
+              <th>Class Photo</th>
+              <th>Class Name</th>
               <th>Price</th>
               <th>Action</th>
             </tr>
@@ -77,7 +79,7 @@ const MyCart = () => {
                   </div>
                 </td>
                 <td>{item.name}</td>
-                <td className="text-end">${item.price}</td>
+                <td>${item.price}</td>
                 <td>
                   <button
                     onClick={() => handleDelete(item)}
