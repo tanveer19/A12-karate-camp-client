@@ -6,6 +6,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
+import SocialLogin from "./SocialLogin";
 
 const Login = () => {
   const {
@@ -141,13 +142,8 @@ const Login = () => {
                 </div>
 
                 <div className="form-control">
-                  <div className="flex">
-                    <button
-                      onClick={handleGoogleSignIn}
-                      className="btn btn-success w-1/2 mx-auto"
-                    >
-                      Google Login
-                    </button>
+                  <div className="flex justify-center">
+                    <SocialLogin></SocialLogin>
 
                     {user && (
                       <div>
