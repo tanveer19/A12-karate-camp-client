@@ -27,10 +27,8 @@ const SocialLogin = () => {
         body: JSON.stringify(saveUser),
       })
         .then((res) => res.json())
-        .then((data) => {
-          if (data.insertedId) {
-            navigate(from, { replace: true });
-          }
+        .then(() => {
+          navigate(from, { replace: true });
         });
     });
   };
