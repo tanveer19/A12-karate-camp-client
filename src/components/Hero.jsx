@@ -13,7 +13,7 @@ const Hero = () => {
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-center text-neutral-content">
             <div className="max-w-md">
-              <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+              <h1 className="mb-5 text-5xl font-bold">Karate Info</h1>
               <p className="mb-5">
                 Karate is a traditional Japanese martial art that has gained
                 worldwide recognition and popularity for its focus on

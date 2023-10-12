@@ -16,6 +16,14 @@ const Header = () => {
 
   const navOptions = (
     <>
+      <Link to="/">
+        <img src="/images/karate-camp.png" className="w-16" alt="" />
+      </Link>
+      <li>
+        <Link to="/">
+          <h3 className="font-bold text-2xl">Karate Camp</h3>
+        </Link>
+      </li>
       <li>
         <Link to="/">Home</Link>
       </li>
@@ -104,11 +112,8 @@ const Header = () => {
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{navOptions}</ul>
+        <ul className="menu menu-horizontal px-1 items-center">{navOptions}</ul>
       </div>
-      <Link to="/">
-        <img src="/images/karate-camp.png" className="w-16" alt="" />
-      </Link>
     </div>
   );
 };

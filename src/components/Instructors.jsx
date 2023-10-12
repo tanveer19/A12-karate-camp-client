@@ -14,7 +14,7 @@ const Instructors = () => {
       {/* instructors section */}
       <div>
         <h4 className="text-5xl text-center my-3"> All Instructors</h4>
-        <div className="grid grid-cols-1 md:grid-cols-2 md:w-3/4 mx-auto p-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 md:w-3/4 mx-auto p-2">
           {instructors.map((instructor) => (
             <div
               key={instructor._id}
