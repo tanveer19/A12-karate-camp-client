@@ -28,7 +28,7 @@ const Order = () => {
       </Helmet>
       <Cover img={orderCoverImg} title="Order Class"></Cover>
       <Tabs defaultIndex={tabIndex} onSelect={(index) => setTtabIndex(index)}>
-        <TabList>
+        <TabList className="flex justify-center bg-[#06b6d4]">
           <Tab>Japan</Tab>
           <Tab>Korea</Tab>
           <Tab>China</Tab>
