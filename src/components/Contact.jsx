@@ -3,7 +3,7 @@ import React from "react";
 const Contact = () => {
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200 ">
+      <div className="hero min-h-[600px] bg-base-200 mt-16 ">
         <div className="hero-content flex-col lg:flex-row-reverse border-x-4 border-sky-500">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Contact Us now!</h1>

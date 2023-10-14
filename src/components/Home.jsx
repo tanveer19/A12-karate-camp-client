@@ -4,8 +4,8 @@ import Facts from "./Facts";
 import Carousel from "./Carousel";
 import Hero from "./Hero";
 import Contact from "./Contact";
-import GridSection from "./Grid";
 import useInstructors from "../hooks/useInstructors";
+import Testimonial from "./Testimonial";
 
 const Home = () => {
   const [instructors] = useInstructors();
@@ -27,13 +27,11 @@ const Home = () => {
 
   return (
     <div>
-      {/* Carousel */}
-
       <Carousel></Carousel>
 
       {/*POPULAR instructors section */}
-      <div className="">
-        <SectionTitle heading={"Popular Instructors"}></SectionTitle>
+      <div>
+        <SectionTitle heading={"POPULAR INSTRUCTORS"}></SectionTitle>
 
         <div className="flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3">
@@ -54,9 +52,9 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* <GridSection></GridSection> */}
       <Facts></Facts>
       <Hero></Hero>
+      <Testimonial></Testimonial>
       <Contact></Contact>
     </div>
   );

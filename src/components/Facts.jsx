@@ -3,7 +3,7 @@ import SectionTitle from "./SectionTitle";
 const Facts = () => {
   return (
     <div className="w-1/2 mx-auto my-5">
-      <SectionTitle heading={"Kyokushin Facts"}></SectionTitle>
+      <SectionTitle heading={"KYOKUSHIN FACTS"}></SectionTitle>
 
       <div className="collapse collapse-plus bg-base-200">
         <input type="radio" name="my-accordion-3" />
