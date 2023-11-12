@@ -10,21 +10,15 @@ const useCart = () => {
     queryKey: ["carts", user?.email],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/carts?email=${user?.email}`
+        `http://localhost:5000/carts?email=${user?.email}`,
+        {
+          headers: {
+            authorization: `bearer ${token}`,
+          },
+        }
       );
       return res.json();
     },
-    // queryFn: async () => {
-    //   const res = await fetch(
-    //     `http://localhost:5000/carts?email=${user?.email}`,
-    //     {
-    //       headers: {
-    //         authorization: `bearer ${token}`,
-    //       },
-    //     }
-    //   );
-    //   return res.json();
-    // },
   });
   return [cart, refetch];
 };
