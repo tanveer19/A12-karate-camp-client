@@ -37,13 +37,13 @@ export default function Carousel() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src="/images/karate-3.jpg" className="rounded-box" />
+          <img src="/images/karate-3.jpg" className="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/images/karate-2.jpg" className="rounded-box" />
+          <img src="/images/karate-2.jpg" className="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/images/karate-1.jpg" className="rounded-box" />
+          <img src="/images/karate-1.jpg" className="" />
         </SwiperSlide>
 
         <div className="autoplay-progress" slot="container-end">

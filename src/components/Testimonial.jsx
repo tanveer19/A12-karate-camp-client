@@ -29,7 +29,7 @@ export default function Testimonial() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <div class="bg-[#06b6d4] text-white p-4 rounded-lg shadow-lg">
+          <div className="bg-[#06b6d4] text-white p-4 rounded-lg shadow-lg">
             "Kyokushin Karate has always been my passion, and my journey in this
             martial art has been truly transformative. <br /> Recently, I had
             the opportunity to use an exceptional application designed
@@ -38,7 +38,7 @@ export default function Testimonial() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div class="bg-[#06b6d4] text-white p-4 rounded-lg shadow-lg">
+          <div className="bg-[#06b6d4] text-white p-4 rounded-lg shadow-lg">
             The sense of community within our dojo is incredible.
             <br /> My fellow students and instructors have become like a second
             family to me. We support each other, celebrate each other's
@@ -48,7 +48,7 @@ export default function Testimonial() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div class="bg-[#06b6d4] text-white p-4 rounded-lg shadow-lg">
+          <div className="bg-[#06b6d4] text-white p-4 rounded-lg shadow-lg">
             "Kyokushin Karate has always been my passion, and my journey in this
             martial art has been truly transformative. <br /> Recently, I had
             the opportunity to use an exceptional <br />
@@ -57,7 +57,7 @@ export default function Testimonial() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div class="bg-[#06b6d4] text-white p-4 rounded-lg shadow-lg">
+          <div className="bg-[#06b6d4] text-white p-4 rounded-lg shadow-lg">
             The sense of community within our dojo is incredible. <br />
             My fellow students and instructors have become like a second family
             to me. We support each other, celebrate each other's successes,
