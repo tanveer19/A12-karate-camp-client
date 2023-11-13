@@ -94,6 +94,11 @@ const Login = () => {
           <div className="text-center lg:text-left"></div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body text-center ">
+              <p className="my-4 text-center">
+                <Link className="btn btn-primary " to="/">
+                  Home
+                </Link>
+              </p>
               <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                 <div className="form-control">
                   <label className="label">
