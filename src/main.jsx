@@ -25,6 +25,8 @@ import MyCart from "./pages/Dashboard/MyCart/MyCart";
 import ClassCard from "./components/ClassCard";
 import Class from "./components/Class";
 import Main from "./Layout/Main";
+import AddItem from "./pages/Dashboard/AddItem/AddItem.jsx";
+import AdminRoute from "./routes/AdminRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -92,12 +94,24 @@ const router = createBrowserRouter([
     ),
     children: [
       {
-        path: "classcard",
-        element: <ClassCard></ClassCard>,
-      },
-      {
         path: "mycart",
         element: <MyCart></MyCart>,
+      },
+      {
+        path: "allusers",
+        element: <AllUsers></AllUsers>,
+      },
+      {
+        path: "addItem",
+        element: (
+          <AdminRoute>
+            <AddItem></AddItem>,
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "classcard",
+        element: <ClassCard></ClassCard>,
       },
       { path: "payment", element: <Payment></Payment> },
       {
@@ -109,10 +123,6 @@ const router = createBrowserRouter([
       {
         path: "adminhome",
         element: <AdminHome></AdminHome>,
-      },
-      {
-        path: "allusers",
-        element: <AllUsers></AllUsers>,
       },
     ],
   },

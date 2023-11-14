@@ -50,7 +50,7 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/reservations">
+                <NavLink to="/dashboard/addItem">
                   <MdOutlineCalendarMonth></MdOutlineCalendarMonth>Add Items
                 </NavLink>
               </li>
