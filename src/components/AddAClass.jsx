@@ -51,20 +51,29 @@ const AddAClass = () => {
 
           <input
             className="border rounded p-2 my-2"
-            placeholder="Name "
+            placeholder="Class Name "
             {...register("name")}
           />
 
-          <input
+          {/* <input
             className="border rounded p-2 my-2"
-            placeholder="image "
+            placeholder="Class image "
             {...register("image")}
-          />
-          <input
-            className="border rounded p-2 my-2"
-            placeholder="category "
-            {...register("category")}
-          />
+          /> */}
+
+          <select
+            {...register("category", { required: true })}
+            className="select select-bordered"
+          >
+            <option selected disabled>
+              Pick Class Category
+            </option>
+            <option value="japan">Japan</option>
+            <option value="korea">Korea</option>
+            <option value="china">China</option>
+            <option value="bangladesh">Bangladesh</option>
+            <option value="taiwan">Taiwan</option>
+          </select>
           <input
             className="border rounded p-2 my-2"
             placeholder="Instructor  Name "
@@ -91,6 +100,12 @@ const AddAClass = () => {
             value="pending"
             placeholder="status"
             {...register("status")}
+          />
+
+          <input
+            type="file"
+            className="file-input file-input-bordered w-full max-w-xs"
+            {...register("image")}
           />
 
           <input
