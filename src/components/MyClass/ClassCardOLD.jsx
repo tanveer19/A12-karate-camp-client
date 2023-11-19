@@ -14,7 +14,7 @@ const ClassCardOLD = (item) => {
   const [control, setControl] = useState("false");
 
   useEffect(() => {
-    fetch("http://localhost:5000/allclasses")
+    fetch("http://localhost:5000/classes")
       .then((res) => res.json())
       .then((result) => {
         setclasses(result);
@@ -32,7 +32,7 @@ const ClassCardOLD = (item) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/allclasses/${id}`, {
+        fetch(`http://localhost:5000/classes/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

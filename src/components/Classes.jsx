@@ -9,7 +9,7 @@ const Classes = (item) => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/allclasses")
+    fetch("http://localhost:5000/classes")
       .then((res) => res.json())
       .then((result) => {
         setclasses(result);
