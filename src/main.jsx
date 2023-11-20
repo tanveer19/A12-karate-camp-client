@@ -1,7 +1,6 @@
 import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Layout from "./components/Layout.jsx";
 import ErrorPage from "./error-page";
 import AuthProvider from "./providers/AuthProvider";
 import Home from "./components/Home";
@@ -11,7 +10,7 @@ import Login from "./components/Login.jsx";
 import SignUp from "./components/SignUp.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 import Profile from "./components/Profile";
-import AddAClass from "./components/AddAClass";
+// import AddItem from "./components/AddItem.jsx";
 import Dashboard from "./Layout/Dashboard";
 import AllUsers from "./pages/Dashboard/AllUsers/AllUsers";
 import { HelmetProvider } from "react-helmet-async";
@@ -76,10 +75,10 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "/AddAClass",
+        path: "/additem",
         element: (
           <PrivateRoute>
-            <AddAClass></AddAClass>
+            <AddItem></AddItem>
           </PrivateRoute>
         ),
       },
