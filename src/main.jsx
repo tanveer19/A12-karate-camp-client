@@ -10,7 +10,6 @@ import Login from "./components/Login.jsx";
 import SignUp from "./components/SignUp.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 import Profile from "./components/Profile";
-// import AddItem from "./components/AddItem.jsx";
 import Dashboard from "./Layout/Dashboard";
 import AllUsers from "./pages/Dashboard/AllUsers/AllUsers";
 import { HelmetProvider } from "react-helmet-async";
@@ -26,6 +25,7 @@ import Class from "./components/Class";
 import Main from "./Layout/Main";
 import AddItem from "./pages/Dashboard/AddItem/AddItem.jsx";
 import AdminRoute from "./routes/AdminRoute.jsx";
+import ManageItems from "./pages/Dashboard/ManageItems/ManageItems.jsx";
 
 const router = createBrowserRouter([
   {
@@ -105,6 +105,14 @@ const router = createBrowserRouter([
         element: (
           <AdminRoute>
             <AddItem></AddItem>,
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "manageitems",
+        element: (
+          <AdminRoute>
+            <ManageItems></ManageItems>
           </AdminRoute>
         ),
       },
