@@ -9,6 +9,7 @@ import {
 } from "react-icons/md";
 import useCart from "../hooks/useCart";
 import useAdmin from "../hooks/useAdmin";
+import { FaHome } from "react-icons/fa";
 
 const Dashboard = () => {
   const [cart] = useCart();
@@ -69,14 +70,7 @@ const Dashboard = () => {
                   <MdWallet></MdWallet>All Users
                 </NavLink>
               </li>
-              <li>
-                <NavLink to="/dashboard/mycart">
-                  <MdShoppingCart></MdShoppingCart> My Cart
-                  <span className="badge badge-primary">
-                    +{cart?.length || 0}
-                  </span>
-                </NavLink>
-              </li>
+
               <li>
                 <NavLink to="/dashboard/history">
                   <MdClass></MdClass> Manage Items
@@ -90,24 +84,38 @@ const Dashboard = () => {
             <>
               <li>
                 <NavLink to="/">
-                  <MdHome></MdHome>Home
+                  <MdHome></MdHome>User Home
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/class"> Our Class</NavLink>
+                <NavLink to="/"> Reservations</NavLink>
               </li>
               <li>
-                <NavLink to="/order/japan"> Order class</NavLink>
+                <NavLink to="/"> Payment History</NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/allusers">
-                  <MdWallet></MdWallet>All Users
+                <NavLink to="/dashboard/mycart">
+                  <MdShoppingCart></MdShoppingCart> My Cart
+                  <span className="badge badge-primary">
+                    +{cart?.length || 0}
+                  </span>
                 </NavLink>
               </li>
             </>
           )}
 
           <div className="divider"></div>
+          <li>
+            <NavLink to="/">
+              <FaHome></FaHome> Home
+            </NavLink>{" "}
+          </li>
+          {/* <li>
+            <NavLink to="/classes"> Our Classes</NavLink>
+          </li> */}
+          <li>
+            <NavLink to="/order/japan">Order Class</NavLink>
+          </li>
         </ul>
       </div>
     </div>

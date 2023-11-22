@@ -97,8 +97,18 @@ const router = createBrowserRouter([
         element: <MyCart></MyCart>,
       },
       {
+        path: "payment",
+        element: <Payment></Payment>,
+      },
+
+      // admin routes
+      {
         path: "allusers",
-        element: <AllUsers></AllUsers>,
+        element: (
+          <AdminRoute>
+            <AllUsers></AllUsers>
+          </AdminRoute>
+        ),
       },
       {
         path: "addItem",
@@ -120,13 +130,11 @@ const router = createBrowserRouter([
         path: "classcard",
         element: <ClassCard></ClassCard>,
       },
-      { path: "payment", element: <Payment></Payment> },
       {
         path: "studenthome",
         element: <StudenHome></StudenHome>,
       },
 
-      // admin routes
       {
         path: "adminhome",
         element: <AdminHome></AdminHome>,
