@@ -12,4 +12,7 @@ yarn add stripe
 provide amount in cents (multiply price with 100)
 9. call payment intent api o get client secret and store it in a state
 10. use confirmCardPayment api with client secret card info
+11. display confirm card error
+12. display confirm card success
+13. do things after payment
 */

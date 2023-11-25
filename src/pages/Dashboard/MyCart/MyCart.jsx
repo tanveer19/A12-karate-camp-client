@@ -40,7 +40,7 @@ const MyCart = () => {
       <Helmet>
         <title>Karate Camp | My Cart</title>
       </Helmet>
-      <div className=" font-semibold h-[60px] flex justify-evenly mr-8">
+      <div className=" font-semibold h-[60px] flex justify-evenly m-8">
         <h3 className="text-xl">Total Items: {cart.length}</h3>
         <h3 className="text-xl">Total Price: ${total}</h3>
         <Link to="/dashboard/payment">

@@ -30,7 +30,7 @@ const Login = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         const loggedInUser = result.user;
-        console.log(loggedInUser);
+        // console.log(loggedInUser);
         setUser(loggedInUser);
       })
       .catch((error) => {
@@ -49,7 +49,7 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        // console.log(loggedUser);
         setError("");
 
         form.reset();
