@@ -16,12 +16,13 @@ const CheckoutForm = ({ cart, price }) => {
   const [transactionId, setTransactionId] = useState("");
 
   useEffect(() => {
-    // console.log(price);
-    axiosSecure.post("/create-payment-intent", { price }).then((res) => {
-      // console.log(res.data.clientSecret);
-      setClientSecret(res.data.clientSecret);
-    });
-  }, []);
+    if (price > 0) {
+      axiosSecure.post("/create-payment-intent", { price }).then((res) => {
+        console.log(res.data.clientSecret);
+        setClientSecret(res.data.clientSecret);
+      });
+    }
+  }, [price, axiosSecure]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -45,7 +46,6 @@ const CheckoutForm = ({ cart, price }) => {
       setCardError(error.message);
     } else {
       setCardError("");
-      // console.log("payment method", paymentMethod);
     }
 
     setProcessing(true);
@@ -76,12 +76,13 @@ const CheckoutForm = ({ cart, price }) => {
         email: user?.email,
         transactionId: paymentIntent.id,
         price,
-        // date: new Date(),
-        // cartItems: cart.map((item) => item._id),
-        // menuItems: cart.map((item) => item.menuItemId),
-        // status: "service pending",
+        date: new Date(),
         quantity: cart.length,
-        items: cart.map((item) => item._id),
+        cartItems: cart.map((item) => item._id),
+        // in bistro boss
+        // menuItems: cart.map((item) => item.menuItemId),
+        classItems: cart.map((item) => item.classItemId),
+        status: "service pending",
         itemNames: cart.map((item) => item.name),
       };
       axiosSecure.post("/payments", payment).then((res) => {
