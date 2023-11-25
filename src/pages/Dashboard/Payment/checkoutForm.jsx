@@ -35,7 +35,7 @@ const CheckoutForm = ({ cart, price }) => {
       return;
     }
 
-    const { error, paymentMethod } = await stripe.createPaymentMethod({
+    const { error } = await stripe.createPaymentMethod({
       type: "card",
       card,
     });
@@ -76,19 +76,20 @@ const CheckoutForm = ({ cart, price }) => {
         email: user?.email,
         transactionId: paymentIntent.id,
         price,
-        date: new Date(),
+        // date: new Date(),
+        // cartItems: cart.map((item) => item._id),
+        // menuItems: cart.map((item) => item.menuItemId),
+        // status: "service pending",
         quantity: cart.length,
-        cartItems: cart.map((item) => item._id),
-        menuItems: cart.map((item) => item.menuItemId),
-        status: "service pending",
+        items: cart.map((item) => item._id),
         itemNames: cart.map((item) => item.name),
       };
-      // axiosSecure.post("/payments", payment).then((res) => {
-      //   console.log(res.data);
-      //   if (res.data.result.insertedId) {
-      //     // display confirm
-      //   }
-      // });
+      axiosSecure.post("/payments", payment).then((res) => {
+        console.log(res.data);
+        if (res.data.result.insertedId) {
+          // display confirm
+        }
+      });
     }
   };
 
