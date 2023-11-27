@@ -57,7 +57,7 @@ const AuthProvider = ({ children }) => {
       // get and set token
       if (currentUser) {
         axios
-          .post("http://localhost:5000/jwt", {
+          .post("https://2-21-a12-summer-camp-server.vercel.app/jwt", {
             email: currentUser.email,
           })
           .then((data) => {

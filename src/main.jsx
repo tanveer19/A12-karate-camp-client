@@ -15,7 +15,6 @@ import AllUsers from "./pages/Dashboard/AllUsers/AllUsers";
 import { HelmetProvider } from "react-helmet-async";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import StudenHome from "./pages/Dashboard/StudentHome/StudenHome";
 import AdminHome from "./pages/Dashboard/AdminHome/AdminHome";
 import Payment from "./pages/Dashboard/Payment/Payment";
 import Order from "./pages/Order/Order";
@@ -26,6 +25,7 @@ import Main from "./Layout/Main";
 import AddItem from "./pages/Dashboard/AddItem/AddItem.jsx";
 import AdminRoute from "./routes/AdminRoute.jsx";
 import ManageItems from "./pages/Dashboard/ManageItems/ManageItems.jsx";
+import UserHome from "./pages/Dashboard/UserHome/UserHome.jsx";
 
 const router = createBrowserRouter([
   {
@@ -93,6 +93,10 @@ const router = createBrowserRouter([
     ),
     children: [
       {
+        path: "userhome",
+        element: <UserHome></UserHome>,
+      },
+      {
         path: "mycart",
         element: <MyCart></MyCart>,
       },
@@ -102,6 +106,15 @@ const router = createBrowserRouter([
       },
 
       // admin routes
+
+      {
+        path: "adminhome",
+        element: (
+          <AdminRoute>
+            <AdminHome></AdminHome>
+          </AdminRoute>
+        ),
+      },
       {
         path: "allusers",
         element: (
@@ -129,10 +142,6 @@ const router = createBrowserRouter([
       {
         path: "classcard",
         element: <ClassCard></ClassCard>,
-      },
-      {
-        path: "studenthome",
-        element: <StudenHome></StudenHome>,
       },
 
       {

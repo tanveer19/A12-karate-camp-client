@@ -7,7 +7,7 @@ const Profile = () => {
   return (
     <div>
       <Helmet>
-        <title>Summer Camp | Profile </title>
+        <title>Karate Camp | Profile </title>
       </Helmet>
 
       <div className=" w-fit mx-auto">Your email: {user?.email}</div>
