@@ -20,7 +20,6 @@ const Cover = ({ img, title }) => {
               well-respected and challenging forms of karate, often referred to
               as "The Strongest Karate."
             </p>
-            <button className="btn btn-primary">Get Started</button>
           </div>
         </div>
       </div>

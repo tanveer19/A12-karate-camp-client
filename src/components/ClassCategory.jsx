@@ -16,9 +16,7 @@ const ClassCategory = ({ items, title, img }) => {
         </div>
         <div className="flex justify-center">
           <Link to={`/order/${title}`}>
-            <button className="btn btn-outline border-l-2 border-r-2 border-0 my-4">
-              Order Now
-            </button>
+            <button className="btn btn-outline border-2 my-4">Order Now</button>
           </Link>
         </div>
       </div>

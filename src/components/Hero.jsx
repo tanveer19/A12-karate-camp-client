@@ -23,7 +23,6 @@ const Hero = () => {
                 "karate" itself means "empty hand" in Japanese, emphasizing the
                 art's primary philosophy of unarmed combat.
               </p>
-              <button className="btn btn-primary">Get Started</button>
             </div>
           </div>
         </div>
