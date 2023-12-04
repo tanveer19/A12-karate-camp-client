@@ -21,12 +21,9 @@ const MyCart = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(
-          `https://2-21-a12-summer-camp-server.vercel.app/carts/${item._id}`,
-          {
-            method: "DELETE",
-          }
-        )
+        fetch(`http://localhost:5000/carts/${item._id}`, {
+          method: "DELETE",
+        })
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {

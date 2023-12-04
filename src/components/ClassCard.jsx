@@ -21,7 +21,7 @@ const ClassCard = ({ item }) => {
         price,
         email: user.email,
       };
-      fetch("https://2-21-a12-summer-camp-server.vercel.app/carts", {
+      fetch("http://localhost:5000/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",

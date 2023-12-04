@@ -13,7 +13,7 @@ const Home = () => {
   // const [instructors, setInstructors] = useState([]);
 
   // useEffect(() => {
-  //   fetch("https://2-21-a12-summer-camp-server.vercel.app/instructors")
+  //   fetch("http://localhost:5000/instructors")
   //     .then((res) => res.json())
 
   //     .then((data) => {

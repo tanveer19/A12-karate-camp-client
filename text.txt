@@ -1,0 +1,6 @@
+i have a mongodb collection called payments . it has a field classItems containing id of the class Items selected during an order. now i need to connect class items id with class collection where every class item has category and price
+
+----------
+i need the number of class items in each category. also i need price of each category that is in the classItems of the payment collection.
+------------
+i am using express mongodb but no mongoose. give me the api route

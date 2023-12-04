@@ -9,17 +9,14 @@ const AllUsers = () => {
   const [axiosSecure] = useAxiosSecure();
   const { data: users = [], refetch } = useQuery(["users"], async () => {
     const res = await axiosSecure.get("/users");
-    // const res = await fetch("https://2-21-a12-summer-camp-server.vercel.app/users");
+    // const res = await fetch("http://localhost:5000/users");
     return res.data;
   });
 
   const handleMakeAdmin = (user) => {
-    fetch(
-      `https://2-21-a12-summer-camp-server.vercel.app/users/admin/${user._id}`,
-      {
-        method: "PATCH",
-      }
-    )
+    fetch(`http://localhost:5000/users/admin/${user._id}`, {
+      method: "PATCH",
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
