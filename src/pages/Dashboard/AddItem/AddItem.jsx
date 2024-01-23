@@ -14,7 +14,7 @@ const AddItem = () => {
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
 
   const onSubmit = (data) => {
-    // fetch("http://localhost:5000/classes", {
+    // fetch("https://2-21-a12-summer-camp-server.vercel.app/classes", {
     //   method: "POST",
     //   headers: { "Content-Type": "application/json" },
     //   body: JSON.stringify(data),
@@ -81,7 +81,8 @@ const AddItem = () => {
         {/* <img src="/images/admission.jpg" className="w-1/2 h-screen" alt="" /> */}
 
         <form
-          className="flex flex-col gap-2 w-full mx-auto justify-center"
+          // className="flex flex-col gap-2 w-full mx-auto justify-center"
+          className="p-5"
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className="form-control">

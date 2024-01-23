@@ -1,7 +1,8 @@
 import React from "react";
 import SectionTitle from "../../../components/SectionTitle";
-import useClasses from "../../../hooks/useClasses";
 import { FaTrashAlt } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
+import useClasses from "../../../hooks/useClasses";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 
@@ -32,10 +33,10 @@ const ManageItems = () => {
   };
   return (
     <div>
-      <SectionTitle
-        heading="Manage All Items"
-        subHeading="Manage"
-      ></SectionTitle>
+      <Helmet>
+        <title>Karate Camp | Manage Classes </title>
+      </Helmet>
+      <SectionTitle heading="Manage Classes" subHeading="Manage"></SectionTitle>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
@@ -45,7 +46,7 @@ const ManageItems = () => {
               <th>Item</th>
               <th>Category</th>
               <th>Price</th>
-              <th>Update</th>
+              <th>Status</th>
               <th>Delete</th>
             </tr>
           </thead>
@@ -74,7 +75,18 @@ const ManageItems = () => {
                 </td>
                 <td>${item.price}</td>
                 <td>
-                  <button className="btn btn-ghost btn-xs">details</button>
+                  {/* <button className="btn btn-ghost btn-xs">details</button> */}
+                  <select className="select btn btn-active">
+                    <option value="Pending" className="btn btn-warning">
+                      Pending
+                    </option>
+                    <option value="Approved" className="btn btn-info">
+                      Approved
+                    </option>
+                    <option value="Rejected" className="btn btn-error">
+                      Rejected
+                    </option>
+                  </select>
                 </td>
                 <td>
                   <button

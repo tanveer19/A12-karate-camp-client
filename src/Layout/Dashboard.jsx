@@ -10,6 +10,7 @@ import {
 import useCart from "../hooks/useCart";
 import useAdmin from "../hooks/useAdmin";
 import { FaHome } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
   const [cart] = useCart();
@@ -19,6 +20,9 @@ const Dashboard = () => {
 
   return (
     <div className="drawer lg:drawer-open">
+      <Helmet>
+        <title>Karate Camp | Dashboard </title>
+      </Helmet>
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content ">
         <label
@@ -57,25 +61,16 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink to="/dashboard/manageitems">
-                  <MdWallet></MdWallet>Manage Items
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/history">
-                  <MdWallet></MdWallet>Manage Bookings
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/allusers">
-                  <MdWallet></MdWallet>All Users
+                  <MdWallet></MdWallet>Manage Classes
                 </NavLink>
               </li>
 
               <li>
-                <NavLink to="/dashboard/history">
-                  <MdClass></MdClass> Manage Items
+                <NavLink to="/dashboard/allusers">
+                  <MdWallet></MdWallet>Manage Users
                 </NavLink>
               </li>
+
               <li>
                 <NavLink to="/dashboard/mycart">
                   <MdShoppingCart></MdShoppingCart> My Cart
@@ -116,11 +111,9 @@ const Dashboard = () => {
           <li>
             <NavLink to="/">
               <FaHome></FaHome> Home
-            </NavLink>{" "}
+            </NavLink>
           </li>
-          {/* <li>
-            <NavLink to="/classes"> Our Classes</NavLink>
-          </li> */}
+
           <li>
             <NavLink to="/order/japan">Order Class</NavLink>
           </li>

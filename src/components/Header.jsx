@@ -84,9 +84,9 @@ const Header = () => {
     </>
   );
   return (
-    <div className="navbar bg-[#06b6d4] text-white">
+    <div className="navbar bg-[#06b6d4] ">
       <div className="navbar-start">
-        <div className="dropdown">
+        <div className="dropdown z-10">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"

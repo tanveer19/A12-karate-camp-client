@@ -1,43 +1,73 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
 import "./Carousel.css";
-
-// import required modules
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import {
+  // Autoplay, Pagination,
+  Navigation,
+} from "swiper/modules";
 
 export default function Carousel() {
-  const progressCircle = useRef(null);
-  const progressContent = useRef(null);
-  const onAutoplayTimeLeft = (s, time, progress) => {
-    progressCircle.current.style.setProperty("--progress", 1 - progress);
-    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-  };
   return (
     <div>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
+        // autoplay={{
+        //   delay: 5000,
+        //   disableOnInteraction: false,
+        // }}
+        // pagination={{
+        //   clickable: true,
+        // }}
         navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        onAutoplayTimeLeft={onAutoplayTimeLeft}
+        modules={[
+          // Autoplay, Pagination,
+          Navigation,
+        ]}
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src="/images/karate-3.jpg" className="" />
+          <div className="flex">
+            {/* <section class="text-white body-font absolute">
+              <div class="container px-5 py-24 mx-auto flex flex-wrap">
+                <div class="flex flex-wrap -m-4">
+                  <div class="p-4 lg:w-1/2 md:w-full">
+                    <div class="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col">
+                      <div class="flex-grow">
+                        <h2 class=" text-lg title-font font-medium mb-3">
+                          Shooting Stars
+                        </h2>
+                        <p class="leading-relaxed text-base">
+                          Blue bottle crucifix vinyl post-ironic four dollar
+                          toast vegan taxidermy. Gastropub indxgo juice poutine.
+                        </p>
+                        <a class="mt-3 text-indigo-500 inline-flex items-center">
+                          Learn More
+                          <svg
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            class="w-4 h-4 ml-2"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section> */}
+            <div className="">
+              <img src="/images/karate-3.jpg" className="" />
+            </div>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
           <img src="/images/karate-2.jpg" className="" />
@@ -45,13 +75,6 @@ export default function Carousel() {
         <SwiperSlide>
           <img src="/images/karate-1.jpg" className="" />
         </SwiperSlide>
-
-        <div className="autoplay-progress" slot="container-end">
-          <svg viewBox="0 0 48 48" ref={progressCircle}>
-            <circle cx="24" cy="24" r="20"></circle>
-          </svg>
-          <span ref={progressContent}></span>
-        </div>
       </Swiper>
     </div>
   );
