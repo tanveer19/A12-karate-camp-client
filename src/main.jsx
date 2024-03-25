@@ -26,6 +26,9 @@ import AddItem from "./pages/Dashboard/AddItem/AddItem.jsx";
 import AdminRoute from "./routes/AdminRoute.jsx";
 import ManageItems from "./pages/Dashboard/ManageItems/ManageItems.jsx";
 import UserHome from "./pages/Dashboard/UserHome/UserHome.jsx";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const router = createBrowserRouter([
   {
@@ -153,14 +156,21 @@ const router = createBrowserRouter([
 ]);
 const queryClient = new QueryClient();
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <AuthProvider>
-      <HelmetProvider>
-        <QueryClientProvider client={queryClient}>
-          <RouterProvider router={router} />
-        </QueryClientProvider>
-      </HelmetProvider>
-    </AuthProvider>
-  </React.StrictMode>
-);
+const App = () => {
+  useEffect(() => {
+    AOS.init({});
+  }, []);
+
+  return (
+    <React.StrictMode>
+      <AuthProvider>
+        <HelmetProvider>
+          <QueryClientProvider client={queryClient}>
+            <RouterProvider router={router} />
+          </QueryClientProvider>
+        </HelmetProvider>
+      </AuthProvider>
+    </React.StrictMode>
+  );
+};
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);

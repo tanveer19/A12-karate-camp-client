@@ -39,6 +39,9 @@ const Home = () => {
               <div
                 key={instructor._id}
                 className="card w-96 h-96 m-2 bg-base-100 shadow-xl"
+                data-aos="fade-up"
+                data-aos-duration="1200"
+                data-aos-delay="200"
               >
                 <figure>
                   <img src={instructor.Picture} alt="Shoes" />
