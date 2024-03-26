@@ -4,7 +4,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./Carousel.css";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import {
+  // Autoplay, Pagination,
+  Navigation,
+} from "swiper/modules";
 
 export default function Carousel() {
   return (
@@ -12,15 +15,18 @@ export default function Carousel() {
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
-        autoplay={{
-          delay: 4000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
+        // autoplay={{
+        //   delay: 5000,
+        //   disableOnInteraction: false,
+        // }}
+        // pagination={{
+        //   clickable: true,
+        // }}
         navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
+        modules={[
+          // Autoplay, Pagination,
+          Navigation,
+        ]}
         className="mySwiper"
       >
         <SwiperSlide>
@@ -58,14 +64,13 @@ export default function Carousel() {
                 </div>
               </div>
             </section> */}
-            <div className="">
-              <img
-                src="/images/karate-3.jpg"
-                className=""
-                data-aos="fade-right"
-                data-aos-duration="1200"
-                data-aos-delay="200"
-              />
+            <div
+              className=""
+              data-aos="fade-right"
+              data-aos-duration="1200"
+              data-aos-delay="200"
+            >
+              <img src="/images/karate-3.jpg" className="" />
             </div>
           </div>
         </SwiperSlide>
