@@ -6,6 +6,7 @@ import Hero from "./Hero";
 import Contact from "./Contact";
 import useInstructors from "../hooks/useInstructors";
 import Testimonial from "./Testimonial";
+import Goal from "./Goal";
 
 const Home = () => {
   const [instructors] = useInstructors();
@@ -31,9 +32,9 @@ const Home = () => {
 
       {/*POPULAR instructors section */}
       <div>
-        <SectionTitle heading={"POPULAR INSTRUCTORS"}></SectionTitle>
+        <SectionTitle heading={"Popular Instructors"}></SectionTitle>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center font-sans">
           <div className="grid grid-cols-1 md:grid-cols-3">
             {instructors.map((instructor) => (
               <div
@@ -44,7 +45,7 @@ const Home = () => {
                 data-aos-delay="200"
               >
                 <figure>
-                  <img src={instructor.Picture} alt="Shoes" />
+                  <img src={instructor.Picture} alt="instructor" />
                 </figure>
                 <div className="card-body">
                   <h2 className="card-title">{instructor.Name}</h2>
@@ -55,6 +56,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Goal></Goal>
       <Facts></Facts>
       <Hero></Hero>
       <Testimonial></Testimonial>

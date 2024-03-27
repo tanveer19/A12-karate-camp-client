@@ -84,7 +84,7 @@ const Header = () => {
     </>
   );
   return (
-    <div className="navbar bg-gradient-to-r from-gray-900 to-gray-500 text-white font-sans">
+    <div className="navbar bg-gray-500 text-white font">
       <div className="navbar-start">
         <div className="dropdown z-10">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="footer p-10  grid grid-cols-2 md:grid-cols-4 bg-gradient-to-r from-gray-900 to-gray-500 text-white font-sans">
+    <footer className="footer p-10  grid grid-cols-2 md:grid-cols-4 bg-gray-500 text-white font-sans">
       <aside className="col-span-full md:col-auto">
         <Link to="/">
           <img src="/images/karate-camp.png" className="w-16" alt="" />
