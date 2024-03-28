@@ -6,64 +6,66 @@ const Goal = () => {
       <section className="mt-36 flex justify-center">
         <h1 className="mt-36 text-6xl text-white">WHAT IS YOUR TARGET?</h1>
       </section>
-      <section class="text-gray-600 body-font border">
+      <section class="text-gray-600 body-font ">
         <div class="container px-5 py-24 mx-auto flex flex-wrap">
-          <div class="lg:w-2/3 mx-auto">
-            {/* <div class="flex flex-wrap w-full bg-gray-100 py-32 px-10 relative mb-4">
-              <img
-                alt="gallery"
-                class="w-full object-cover h-full object-center block opacity-25 absolute inset-0"
-                src="https://dummyimage.com/820x340"
-              />
-              <div class="text-center relative z-10 w-full">
-                <h2 class="text-2xl text-gray-900 font-medium title-font mb-2">
-                  Shooting Stars
-                </h2>
-                <p class="leading-relaxed">
-                  Skateboard +1 mustache fixie paleo lumbersexual.
-                </p>
-                <a class="mt-3 text-indigo-500 inline-flex items-center">
-                  Learn More
-                </a>
-              </div>
-            </div> */}
+          <div class="lg:w-full mx-auto ">
             <div class="flex flex-wrap -mx-2">
-              <div class="px-2 w-1/2">
-                <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
+              <div class="px-2 w-full md:w-1/3">
+                <div class="flex flex-wrap w-full sm:py-24 py-16 sm:px-10 px-6 relative grayscale hover:grayscale-0">
                   <img
                     alt="gallery"
-                    class="w-full object-cover h-full object-center block opacity-25 absolute inset-0"
-                    src="https://dummyimage.com/542x460"
+                    class="w-full object-cover h-full object-center block  absolute inset-0 rounded-3xl"
+                    src="./images/karate-3.jpg"
                   />
                   <div class="text-center relative z-10 w-full">
-                    <h2 class="text-xl text-gray-900 font-medium title-font mb-2">
-                      Shooting Stars
+                    <h2 class="text-xl text-white font-medium title-font mb-8">
+                      Be strong
                     </h2>
-                    <p class="leading-relaxed">
-                      Skateboard +1 mustache fixie paleo lumbersexual.
+                    <p class="text-white leading-relaxed text-3xl">
+                      Weight lifting
                     </p>
-                    <a class="mt-3 text-indigo-500 inline-flex items-center">
-                      Learn More
+                    <a class="mt-3 text-white inline-flex items-center bg-black p-5 rounded-xl">
+                      See packages
                     </a>
                   </div>
                 </div>
               </div>
-              <div class="px-2 w-1/2">
-                <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
+              <div class="px-2  w-full md:w-1/3">
+                <div class="flex flex-wrap w-full sm:py-24 py-16 sm:px-10 px-6 relative grayscale hover:grayscale-0">
                   <img
                     alt="gallery"
-                    class="w-full object-cover h-full object-center block opacity-25 absolute inset-0"
-                    src="https://dummyimage.com/542x420"
+                    class="w-full object-cover h-full object-center block  absolute inset-0 rounded-3xl"
+                    src="./images/karate-2.jpg"
                   />
                   <div class="text-center relative z-10 w-full">
-                    <h2 class="text-xl text-gray-900 font-medium title-font mb-2">
-                      Shooting Stars
+                    <h2 class="text-xl text-white font-medium title-font mb-8">
+                      Be strong
                     </h2>
-                    <p class="leading-relaxed">
-                      Skateboard +1 mustache fixie paleo lumbersexual.
+                    <p class="text-white leading-relaxed text-3xl">
+                      Weight lifting
                     </p>
-                    <a class="mt-3 text-indigo-500 inline-flex items-center">
-                      Learn More
+                    <a class="mt-3 text-white inline-flex items-center bg-black p-5 rounded-xl">
+                      See packages
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="px-2  w-full md:w-1/3">
+                <div class="flex flex-wrap w-full sm:py-24 py-16 sm:px-10 px-6 relative grayscale hover:grayscale-0">
+                  <img
+                    alt="gallery"
+                    class="w-full object-cover h-full object-center block  absolute inset-0 rounded-3xl"
+                    src="./images/karate-3.jpg"
+                  />
+                  <div class="text-center relative z-10 w-full">
+                    <h2 class="text-xl text-white font-medium title-font mb-8">
+                      Be strong
+                    </h2>
+                    <p class="text-white leading-relaxed text-3xl">
+                      Weight lifting
+                    </p>
+                    <a class="mt-3 text-white inline-flex items-center bg-black p-5 rounded-xl">
+                      See packages
                     </a>
                   </div>
                 </div>
