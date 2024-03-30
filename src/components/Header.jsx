@@ -43,15 +43,19 @@ const Header = () => {
         <Link to="/order/japan">Order</Link>
       </li>
 
-      <li>
-        <Link to="/profile">Profile</Link>
-      </li>
+      {user && (
+        <li>
+          <Link to="/profile">Profile</Link>
+        </li>
+      )}
+      {user && (
+        <li>
+          <Link to={isAdmin ? "/dashboard/adminhome" : "/dashboard/userhome"}>
+            Dashboard
+          </Link>
+        </li>
+      )}
 
-      <li>
-        <Link to={isAdmin ? "/dashboard/adminhome" : "/dashboard/userhome"}>
-          Dashboard
-        </Link>
-      </li>
       <li>
         <Link to="/dashboard/mycart">
           <button className="btn gap-2">
