@@ -2,10 +2,10 @@ import React from "react";
 import SectionTitle from "./SectionTitle";
 const Facts = () => {
   return (
-    <div className="w-1/2 mx-auto my-5">
+    <div className="w-1/2 mx-auto my-5 font-sans">
       <SectionTitle heading={"KYOKUSHIN FACTS"}></SectionTitle>
 
-      <div className="collapse collapse-plus bg-base-200">
+      <div className="collapse collapse-plus bg-base-200 my-5">
         <input type="radio" name="my-accordion-3" />
         <div className="collapse-title text-xl font-medium">kyokushin belt</div>
         <div className="collapse-content">
@@ -52,7 +52,7 @@ const Facts = () => {
           </p>
         </div>
       </div>
-      <div className="collapse collapse-plus bg-base-200">
+      <div className="collapse collapse-plus bg-base-200 my-5">
         <input type="radio" name="my-accordion-3" />
         <div className="collapse-title text-xl font-medium">
           Some info about kyokushin

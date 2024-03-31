@@ -13,7 +13,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 
 export default function Testimonial() {
   return (
-    <>
+    <div className="font-sans">
       <h3 className="text-4xl font-bold mx-auto w-fit m-8 border-y-8 border-cyan-500 border-x-0">
         TESTIMONIAL
       </h3>
@@ -67,6 +67,6 @@ export default function Testimonial() {
           </div>
         </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 }
