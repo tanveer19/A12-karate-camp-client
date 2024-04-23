@@ -1,11 +1,18 @@
 import React from "react";
 import SectionTitle from "./SectionTitle";
+import { useState } from "react";
 const Facts = () => {
+  const [openAccordion, setOpenAccordion] = useState(null);
   return (
     <div className="w-1/2 mx-auto my-5 font-sans">
       <SectionTitle heading={"KYOKUSHIN FACTS"}></SectionTitle>
 
-      <div className="collapse collapse-plus bg-base-200 my-5">
+      <div
+        className={`collapse collapse-plus bg-base-200 my-5 ${
+          openAccordion === 1 ? "bg-sky-500" : ""
+        }`}
+        onClick={() => setOpenAccordion(1)}
+      >
         <input type="radio" name="my-accordion-3" />
         <div className="collapse-title text-xl font-medium">kyokushin belt</div>
         <div className="collapse-content">
@@ -17,26 +24,7 @@ const Facts = () => {
             1. White Belt (10th Kyu): This is the starting rank for all students
             and represents a beginner's level of understanding and skill.
           </p>
-          <p>
-            2. Yellow Belt (9th Kyu): The yellow belt indicates that the student
-            has progressed in their training and has acquired a basic
-            understanding of Kyokushin techniques.
-          </p>
-          <p>
-            3. Orange Belt (8th Kyu): The orange belt represents an intermediate
-            level of proficiency and shows that the student has developed a
-            solid foundation of fundamental techniques.
-          </p>
-          <p>
-            4. Green Belt (7th Kyu): The green belt signifies further progress
-            in training, demonstrating that the student has improved their
-            skills and is advancing in their knowledge of Kyokushin Karate.
-          </p>
-          <p>
-            5. Blue Belt (6th Kyu): The blue belt indicates that the student has
-            reached an intermediate level of expertise and has demonstrated
-            proficiency in a wide range of techniques.
-          </p>
+
           <p>
             6. Brown Belt (5th Kyu - 1st Kyu): The brown belt is divided into
             five levels, with 5th Kyu being the lowest and 1st Kyu being the
@@ -52,7 +40,12 @@ const Facts = () => {
           </p>
         </div>
       </div>
-      <div className="collapse collapse-plus bg-base-200 my-5">
+      <div
+        className={`collapse collapse-plus bg-base-200 my-5 ${
+          openAccordion === 2 ? "bg-green-500" : ""
+        }`}
+        onClick={() => setOpenAccordion(2)}
+      >
         <input type="radio" name="my-accordion-3" />
         <div className="collapse-title text-xl font-medium">
           Some info about kyokushin
@@ -73,31 +66,14 @@ const Facts = () => {
             kicks, knee strikes, and throws, with an emphasis on delivering
             powerful and efficient techniques.
           </p>
-
-          <p>
-            One distinctive feature of Kyokushin Karate is its full-contact
-            sparring, where practitioners engage in intense bouts with limited
-            protective gear, excluding strikes to the head. This approach
-            cultivates toughness, resilience, and adaptability in real-life
-            combat situations.
-          </p>
-
-          <p>
-            Additionally, Kyokushin Karate places significance on kata training,
-            which involves practicing choreographed sequences of movements to
-            develop balance, coordination, technique precision, and mental
-            focus.
-          </p>
-
-          <p>
-            The belt ranking system is used in Kyokushin to mark progress and
-            skill levels. Starting from the white belt, students advance through
-            various colored belts until reaching the prestigious black belt,
-            which is further divided into ten degrees or dans.
-          </p>
         </div>
       </div>
-      <div className="collapse collapse-plus bg-base-200">
+      <div
+        className={`collapse collapse-plus bg-base-200 my-5 ${
+          openAccordion === 3 ? "bg-emerald-500" : ""
+        }`}
+        onClick={() => setOpenAccordion(3)}
+      >
         <input type="radio" name="my-accordion-3" />
         <div className="collapse-title text-xl font-medium">
           Branches in Bangladesh{" "}
