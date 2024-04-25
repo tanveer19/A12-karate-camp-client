@@ -1,12 +1,18 @@
 import React from "react";
+import SectionTitle from "./SectionTitle";
 
 const Goal = () => {
   return (
     <div className="md:h-screen font-sans font-bold bg-gray-700">
       <section className="mt-36 flex justify-center text-center">
-        <h1 className="mt-36 text-6xl text-white">WHAT IS YOUR TARGET?</h1>
+        <SectionTitle heading={"What is your Target?"}></SectionTitle>
       </section>
-      <section class="text-gray-600 body-font ">
+      <section
+        class="text-gray-600 body-font "
+        data-aos="fade-up"
+        data-aos-duration="1200"
+        data-aos-delay="200"
+      >
         <div class="container px-5 py-24 mx-auto flex flex-wrap">
           <div class="lg:w-full mx-auto ">
             <div class="flex flex-wrap gap-5 md:gap-0 -mx-2  ">

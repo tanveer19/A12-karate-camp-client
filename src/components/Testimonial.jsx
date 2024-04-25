@@ -10,13 +10,13 @@ import "./Testimonial.css";
 
 // import required modules
 import { Autoplay, Navigation } from "swiper/modules";
+import SectionTitle from "./SectionTitle";
 
 export default function Testimonial() {
   return (
     <div className="font-sans">
-      <h3 className="text-4xl font-bold mx-auto w-fit m-8 border-y-8 border-cyan-500 border-x-0">
-        TESTIMONIAL
-      </h3>
+      <SectionTitle heading={"Testimonial"}></SectionTitle>
+
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -27,6 +27,9 @@ export default function Testimonial() {
         navigation={true}
         modules={[Autoplay, Navigation]}
         className="mySwiper"
+        data-aos="fade-up"
+        data-aos-duration="1200"
+        data-aos-delay="200"
       >
         <SwiperSlide>
           <div className="bg-[#06b6d4] text-white p-4 rounded-lg shadow-lg">

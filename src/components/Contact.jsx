@@ -1,16 +1,20 @@
 import React from "react";
+import SectionTitle from "./SectionTitle";
 
 const Contact = () => {
   return (
     <div>
       <div className="hero min-h-[600px] bg-base-200 mt-16 font-sans">
-        <div className="hero-content flex-col lg:flex-row-reverse border-x-4 border-sky-500">
+        <div className="hero-content flex-col ">
           <div className="text-center lg:text-left">
-            <h3 className="text-4xl font-bold mx-auto w-fit m-8 border-y-8 border-cyan-500 border-x-0">
-              Contact Us now!
-            </h3>
+            <SectionTitle heading={"Contact Us Now"}></SectionTitle>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div
+            className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100"
+            data-aos="fade-up"
+            data-aos-duration="1200"
+            data-aos-delay="200"
+          >
             <div className="card-body">
               <div className="form-control">
                 <label className="label">
