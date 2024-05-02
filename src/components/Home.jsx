@@ -9,22 +9,22 @@ import Testimonial from "./Testimonial";
 import Goal from "./Goal";
 
 const Home = () => {
-  const [instructors] = useInstructors();
-  const popular = instructors.filter((item) => item.category === "popular");
-  // const [instructors, setInstructors] = useState([]);
+  // const [instructors] = useInstructors();
+  const [instructors, setInstructors] = useState([]);
+  // const popular = instructors.filter((item) => item.category === "popular");
 
-  // useEffect(() => {
-  //   fetch("https://2-21-a12-summer-camp-server.vercel.app/instructors")
-  //     .then((res) => res.json())
+  useEffect(() => {
+    fetch("https://2-21-a12-summer-camp-server.vercel.app/instructors")
+      .then((res) => res.json())
 
-  //     .then((data) => {
-  //       const popularInstructors = data.filter(
-  //         (item) => item.Category === "popular"
-  //       );
+      .then((data) => {
+        const popularInstructors = data.filter(
+          (item) => item.Category === "popular"
+        );
 
-  //       setInstructors(popularInstructors);
-  //     });
-  // }, []);
+        setInstructors(popularInstructors);
+      });
+  }, []);
 
   return (
     <div>
@@ -35,7 +35,7 @@ const Home = () => {
         <SectionTitle heading={"Popular Instructors"}></SectionTitle>
 
         <div className="flex justify-center font-sans">
-          <div className="grid grid-cols-1 md:grid-cols-3">
+          <div className="grid grid-cols-1 md:grid-cols-2">
             {instructors.map((instructor) => (
               <div
                 key={instructor._id}
