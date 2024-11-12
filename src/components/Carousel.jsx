@@ -33,7 +33,7 @@ export default function Carousel() {
           <div className="flex">
             <div
               className=""
-              data-aos="fade-right"
+              data-aos="fade-left"
               data-aos-duration="1200"
               data-aos-delay="200"
             >
