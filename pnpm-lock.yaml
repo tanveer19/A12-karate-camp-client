@@ -91,8 +91,8 @@ importers:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.41)
       daisyui:
-        specifier: ^4.12.14
-        version: 4.12.14(postcss@8.4.41)
+        specifier: ^4.12.23
+        version: 4.12.23(postcss@8.4.41)
       eslint-plugin-react:
         specifier: ^7.35.0
         version: 7.35.0(eslint@9.14.0(jiti@1.21.6))
@@ -1308,8 +1308,8 @@ packages:
     resolution: {integrity: sha512-ndfJ/JxxMd3nw31uyKoY2naivF+r29V+Lc0svZxe1JvvIRmi8hUsrMvdOwgS1o6uBHmiz91geQ0ylPP0aj1VUA==}
     engines: {node: '>=12'}
 
-  daisyui@4.12.14:
-    resolution: {integrity: sha512-hA27cdBasdwd4/iEjn+aidoCrRroDuo3G5W9NDKaVCJI437Mm/3eSL/2u7MkZ0pt8a+TrYF3aT2pFVemTS3how==}
+  daisyui@4.12.23:
+    resolution: {integrity: sha512-EM38duvxutJ5PD65lO/AFMpcw+9qEy6XAZrTpzp7WyaPeO/l+F/Qiq0ECHHmFNcFXh5aVoALY4MGrrxtCiaQCQ==}
     engines: {node: '>=16.9.0'}
 
   data-view-buffer@1.0.1:
@@ -4538,11 +4538,11 @@ snapshots:
 
   d3-timer@3.0.1: {}
 
-  daisyui@4.12.14(postcss@8.4.41):
+  daisyui@4.12.23(postcss@8.4.41):
     dependencies:
       css-selector-tokenizer: 0.8.0
       culori: 3.3.0
-      picocolors: 1.0.1
+      picocolors: 1.1.1
       postcss-js: 4.0.1(postcss@8.4.41)
     transitivePeerDependencies:
       - postcss

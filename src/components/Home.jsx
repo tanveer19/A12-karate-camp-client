@@ -45,7 +45,11 @@ const Home = () => {
                 data-aos-delay="200"
               >
                 <figure>
-                  <img src={instructor.Picture} alt="instructor" />
+                  <img
+                    src={instructor.Picture}
+                    alt="instructor"
+                    className="h-72"
+                  />
                 </figure>
                 <div className="card-body">
                   <h2 className="card-title">{instructor.Name}</h2>
