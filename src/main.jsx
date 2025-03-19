@@ -29,7 +29,7 @@ import UserHome from "./pages/Dashboard/UserHome/UserHome.jsx";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import "@smastrom/react-rating/style.css";
 const router = createBrowserRouter([
   {
     path: "/",

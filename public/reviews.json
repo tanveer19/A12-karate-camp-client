@@ -1,0 +1,62 @@
+[
+  {
+    "_id": "643010e0f5a7e52ce1e8fa65",
+    "name": "Jane Doe",
+    "details": "The instructors are knowledgeable and patient, but the class schedule doesn't always align with my availability. Overall, a good experience.",
+    "rating": 3
+  },
+  {
+    "_id": "643010f9f5a7e52ce1e8fa66",
+    "name": "John Doe",
+    "details": "Great atmosphere and excellent training. The sensei is very skilled and makes the classes enjoyable. Highly recommend for beginners and advanced students alike.",
+    "rating": 4
+  },
+  {
+    "_id": "6430110af5a7e52ce1e8fa67",
+    "name": "MJ Doe",
+    "details": "Absolutely love this dojo! The classes are well-structured, and the instructors are passionate about teaching. I've improved significantly since joining.",
+    "rating": 5
+  },
+  {
+    "_id": "64301123f5a7e52ce1e8fa68",
+    "name": "Sarah Smith",
+    "details": "The karate classes are fun and engaging. The instructors are supportive, and I feel like I'm learning a lot. The only downside is the limited parking space.",
+    "rating": 4
+  },
+  {
+    "_id": "6430113af5a7e52ce1e8fa69",
+    "name": "Robert Johnson",
+    "details": "This is the best karate school I've ever attended. The sensei is amazing, and the community is welcoming. I look forward to every class!",
+    "rating": 5
+  },
+  {
+    "_id": "6430114bf5a7e52ce1e8fa70",
+    "name": "Emily Brown",
+    "details": "The classes are intense but rewarding. The instructors push you to be your best, and the results are noticeable. Highly recommend for anyone serious about karate.",
+    "rating": 5
+  },
+  {
+    "_id": "6430115cf5a7e52ce1e8fa71",
+    "name": "Michael Davis",
+    "details": "Good classes overall, but I wish there were more advanced sessions. The instructors are friendly, and the environment is positive.",
+    "rating": 4
+  },
+  {
+    "_id": "6430116df5a7e52ce1e8fa72",
+    "name": "Laura Wilson",
+    "details": "I enjoy the classes, but the facility could use some upgrades. The instructors are great, and I've learned a lot in a short time.",
+    "rating": 4
+  },
+  {
+    "_id": "6430117ef5a7e52ce1e8fa73",
+    "name": "Daniel Martinez",
+    "details": "The karate classes are fantastic! The instructors are highly skilled, and the classes are well-organized. I feel more confident and stronger after each session.",
+    "rating": 5
+  },
+  {
+    "_id": "6430118ff5a7e52ce1e8fa74",
+    "name": "Sophia Anderson",
+    "details": "The classes are fun and challenging. The instructors are very supportive, and I've made great progress. The only issue is the occasional overcrowding.",
+    "rating": 4
+  }
+]
