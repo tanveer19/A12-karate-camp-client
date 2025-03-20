@@ -37,15 +37,15 @@ export default function Carousel() {
               data-aos-duration="1200"
               data-aos-delay="200"
             >
-              <img src="/images/slider-gym-2.jpg" className="" />
+              <img src="/images/karate-3.jpg" className="" />
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/images/slider-gym-3.jpg" className="" />
+          <img src="/images/karate-1.jpg" className="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/images/slider-gym-4.jpg" className="" />
+          <img src="/images/karate-2.jpg" className="" />
         </SwiperSlide>
       </Swiper>
     </div>

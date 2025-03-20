@@ -20,7 +20,7 @@ export default function Testimonial() {
     fetch("reviews.json")
       .then((res) => res.json())
       .then((data) => setReviews(data));
-  });
+  }, []);
 
   return (
     <div className="font-sans">
