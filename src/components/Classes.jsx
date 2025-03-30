@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 
-const Classes = (item) => {
+const Classes = () => {
   const [classes, setclasses] = useState([]);
 
   const handleAddToCart = (data) => {
@@ -23,7 +23,7 @@ const Classes = (item) => {
 
       <div>
         <div className="overflow-x-auto">
-          <table className="table table-xs">
+          <table className="table">
             <thead>
               <tr>
                 <th>Select</th>
@@ -35,7 +35,7 @@ const Classes = (item) => {
                 <th>Seats</th>
                 <th>Price</th>
                 <th>status</th>
-                <th>Add</th>
+                {/* <th>Add</th> */}
               </tr>
             </thead>
 
@@ -67,14 +67,14 @@ const Classes = (item) => {
                   <td>{data.seats}</td>
                   <td>{data.price}</td>
                   <td>{data.status}</td>
-                  <td>
+                  {/* <td>
                     <button
                       onClick={() => handleAddToCart(data)}
                       className="btn btn-outline bg-teal-100 mt-4"
                     >
                       Add to Cart
                     </button>
-                  </td>
+                  </td> */}
                 </tr>
               ))}
             </tbody>
