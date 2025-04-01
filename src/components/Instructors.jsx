@@ -14,17 +14,21 @@ const Instructors = () => {
       {/* instructors section */}
       <div>
         <h4 className="text-5xl text-center my-3"> All Instructors</h4>
-        <div className="grid grid-cols-1 md:grid-cols-3 md:w-3/4 mx-auto p-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 mx-auto">
           {instructors.map((instructor) => (
             <div
               key={instructor._id}
-              className="card w-96 h-96 m-2 bg-base-100 shadow-xl"
+              className="card h-96 m-2 bg-base-100 shadow-xl"
               data-aos="fade-up"
               data-aos-duration="1200"
               data-aos-delay="200"
             >
               <figure>
-                <img src={instructor.Picture} alt="instructors" />
+                <img
+                  className="w-full h-96"
+                  src={instructor.Picture}
+                  alt="instructors"
+                />
               </figure>
               <div className="card-body">
                 <h2 className="card-title">{instructor.Name}</h2>
