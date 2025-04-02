@@ -88,7 +88,7 @@ const Header = () => {
     </>
   );
   return (
-    <div className="navbar justify-center max-w-7xl mx-auto">
+    <div className="navbar md:justify-center max-w-7xl mx-auto">
       {/* mobile */}
       <div className="navbar-start sm:hidden">
         <div className="dropdown z-10">

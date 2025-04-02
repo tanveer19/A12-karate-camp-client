@@ -14,11 +14,11 @@ const Instructors = () => {
       {/* instructors section */}
       <div>
         <h4 className="text-5xl text-center my-3"> All Instructors</h4>
-        <div className="grid grid-cols-1 md:grid-cols-3 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 max-w-7xl mx-auto">
           {instructors.map((instructor) => (
             <div
               key={instructor._id}
-              className="card h-96 m-2 bg-base-100 shadow-xl"
+              className="card w-full m-2 bg-base-100 shadow-xl"
               data-aos="fade-up"
               data-aos-duration="1200"
               data-aos-delay="200"

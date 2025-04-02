@@ -3,7 +3,7 @@ import React from "react";
 const SectionTitle = ({ heading, subHeading }) => {
   return (
     <div
-      className="mx-auto text-center mt-24 p-2 font-sans"
+      className="mx-auto text-center md:mt-24 p-2 font-sans"
       data-aos="fade-down"
       data-aos-duration="1200"
       data-aos-delay="200"
