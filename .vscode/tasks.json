@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run pnpm dev",
+      "type": "shell",
+      "command": "pnpm dev",
+      "problemMatcher": [],
+      "isBackground": true,
+      "presentation": {
+        "reveal": "never", // Ensures terminal never opens
+        "panel": "dedicated" // Runs in background (no UI)
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    }
+  ]
+}

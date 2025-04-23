@@ -53,7 +53,7 @@ const MyCart = () => {
 
       {/* table */}
       <div className="overflow-x-auto">
-        <table className="table table-xs border-4">
+        <table className="table border-4">
           {/* head */}
           <thead>
             <tr>

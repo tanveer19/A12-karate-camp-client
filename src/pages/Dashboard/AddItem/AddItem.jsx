@@ -86,9 +86,7 @@ const AddItem = () => {
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className="form-control">
-            <label htmlFor="" className="label">
-              <span className="label-text">Class Name*</span>
-            </label>
+            <p className="label-text">Class Name*</p>
             <input
               className="border rounded p-2 my-2"
               placeholder="Class Name "
@@ -146,7 +144,7 @@ const AddItem = () => {
             />
           </div>
 
-          <div className="form-control">
+          <div className="form-control flex flex-col ">
             <label className="label">
               <span className="label-text">Instructor Name*</span>
             </label>
@@ -157,7 +155,7 @@ const AddItem = () => {
             />
           </div>
 
-          <div className="form-control">
+          <div className="form-control flex flex-col">
             <label className="label">
               <span className="label-text">Instructor Email*</span>
             </label>
@@ -170,7 +168,7 @@ const AddItem = () => {
             />
           </div>
 
-          <div className="form-control">
+          <div className="form-control flex flex-col">
             <label className="label">
               <span className="label-text">Available Seats*</span>
             </label>
@@ -180,7 +178,7 @@ const AddItem = () => {
               {...register("seats")}
             />
           </div>
-          <div className="form-control">
+          <div className="form-control flex flex-col">
             <label className="label">
               <span className="label-text">Status*</span>
             </label>
