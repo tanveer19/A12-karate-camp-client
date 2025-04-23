@@ -1,10 +1,11 @@
 import React from "react";
 import SectionTitle from "../../../components/SectionTitle";
-import { FaTrashAlt } from "react-icons/fa";
+import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 import useClasses from "../../../hooks/useClasses";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const ManageItems = () => {
   const [classes, , refetch] = useClasses();
@@ -43,7 +44,7 @@ const ManageItems = () => {
           <thead>
             <tr>
               <th>#</th>
-              <th>Item</th>
+              <th>Class Name</th>
               <th>Category</th>
               <th>Price</th>
               <th>Status</th>
@@ -58,10 +59,7 @@ const ManageItems = () => {
                   <div className="flex items-center gap-3">
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
-                        <img
-                          src={item.image}
-                          alt="Avatar Tailwind CSS Component"
-                        />
+                        <img src={item.image} alt="" />
                       </div>
                     </div>
                     <div>
@@ -75,8 +73,12 @@ const ManageItems = () => {
                 </td>
                 <td>${item.price}</td>
                 <td>
-                  {/* <button className="btn btn-ghost btn-xs">details</button> */}
-                  <select className="select btn btn-active">
+                  <Link to={`/dashboard/updateItem/${item._id}`}>
+                    <button className="btn btn-ghost btn-lg">
+                      <FaEdit className="text-red-600"></FaEdit>
+                    </button>
+                  </Link>
+                  {/* <select className="select btn btn-active">
                     <option value="Pending" className="btn btn-warning">
                       Pending
                     </option>
@@ -86,7 +88,7 @@ const ManageItems = () => {
                     <option value="Rejected" className="btn btn-error">
                       Rejected
                     </option>
-                  </select>
+                  </select> */}
                 </td>
                 <td>
                   <button

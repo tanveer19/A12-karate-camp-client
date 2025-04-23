@@ -201,10 +201,3 @@ const AddItem = () => {
 };
 
 export default AddItem;
-
-{
-  /* <SectionTitle
-  subHeading="What's new"
-  heading="Add an Item"
-></SectionTitle> */
-}
