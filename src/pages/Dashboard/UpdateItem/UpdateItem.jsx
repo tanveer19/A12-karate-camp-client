@@ -86,6 +86,7 @@ const UpdateItem = () => {
               className="border rounded p-2 my-2 w-full"
               placeholder="Class Name "
               {...register("name")}
+              defaultValue={name}
             />
           </div>
 
@@ -94,7 +95,7 @@ const UpdateItem = () => {
               <span className="label-text">Category*</span>
             </label>
             <select
-              defaultValue="Pick one"
+              defaultValue={category}
               {...register("category", { required: true })}
               className="select select-bordered"
             >
@@ -115,6 +116,7 @@ const UpdateItem = () => {
               className="border rounded p-2"
               placeholder="Price "
               {...register("price")}
+              defaultValue={price}
             />
           </div>
           <div className="form-control">
@@ -135,6 +137,7 @@ const UpdateItem = () => {
             <input
               type="file"
               {...register("image", { required: true })}
+              defaultValue={image}
               className="file-input file-input-bordered "
             />
           </div>
@@ -147,6 +150,7 @@ const UpdateItem = () => {
               className="border rounded p-2 my-2"
               placeholder="Instructor Name "
               {...register("InstructorName")}
+              defaultValue={InstructorName}
             />
           </div>
 
@@ -160,6 +164,7 @@ const UpdateItem = () => {
               placeholder="Instructor Email "
               value={user.email}
               {...register("InstructorEmail")}
+              defaultValue={InstructorEmail}
             />
           </div>
 
@@ -171,6 +176,7 @@ const UpdateItem = () => {
               className="border rounded p-2 my-2"
               placeholder="Available seats "
               {...register("seats")}
+              defaultValue={seats}
             />
           </div>
           <div className="form-control flex flex-col">
@@ -182,6 +188,7 @@ const UpdateItem = () => {
               value="pending"
               placeholder="status"
               {...register("status")}
+              defaultValue={status}
             />
           </div>
 
