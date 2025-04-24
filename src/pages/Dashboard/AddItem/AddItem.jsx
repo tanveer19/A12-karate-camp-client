@@ -5,37 +5,19 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../../providers/AuthProvider";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
-const img_hosting_token = import.meta.env.VITE_Image_Upload_token;
+const image_hosting_key = import.meta.env.VITE_Image_Upload_token;
+const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const AddItem = () => {
   const [axiosSecure] = useAxiosSecure();
   const { user } = useContext(AuthContext);
   const { register, handleSubmit, reset } = useForm();
-  const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
 
   const onSubmit = (data) => {
-    // fetch("https://2-21-a12-summer-camp-server.vercel.app/classes", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(data),
-    // })
-    //   .then((res) => res.json())
-    //   .then((result) => {
-    //     console.log(result);
-
-    //     Swal.fire({
-    //       position: "top-end",
-    //       icon: "success",
-    //       title: "Class Added successfully.",
-    //       showConfirmButton: false,
-    //       timer: 1500,
-    //     });
-    //   });
-
     const formData = new FormData();
     formData.append("image", data.image[0]);
 
-    fetch(img_hosting_url, {
+    fetch(image_hosting_api, {
       method: "POST",
       body: formData,
     })
@@ -78,17 +60,11 @@ const AddItem = () => {
       </Helmet>
 
       <div className="flex">
-        {/* <img src="/images/admission.jpg" className="w-1/2 h-screen" alt="" /> */}
-
-        <form
-          // className="flex flex-col gap-2 w-full mx-auto justify-center"
-          className="p-5"
-          onSubmit={handleSubmit(onSubmit)}
-        >
+        <form className="p-5" onSubmit={handleSubmit(onSubmit)}>
           <div className="form-control">
             <p className="label-text">Class Name*</p>
             <input
-              className="border rounded p-2 my-2"
+              className="border rounded p-2 my-2 w-full"
               placeholder="Class Name "
               {...register("name")}
             />
@@ -162,7 +138,7 @@ const AddItem = () => {
 
             <input
               className="border rounded p-2 my-2"
-              placeholder="Instructor  Email "
+              placeholder="Instructor Email "
               value={user.email}
               {...register("InstructorEmail")}
             />
