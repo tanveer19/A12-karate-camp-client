@@ -30,6 +30,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "@smastrom/react-rating/style.css";
+import UpdateItem from "./pages/Dashboard/UpdateItem/UpdateItem.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -141,6 +142,18 @@ const router = createBrowserRouter([
             <ManageItems></ManageItems>
           </AdminRoute>
         ),
+      },
+      {
+        path: "updateItem/:id",
+        element: (
+          <AdminRoute>
+            <UpdateItem></UpdateItem>
+          </AdminRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://2-21-a12-summer-camp-server.vercel.app/classes/${params.id}`
+          ),
       },
       {
         path: "classcard",
