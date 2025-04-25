@@ -36,40 +36,47 @@ const UpdateItem = () => {
 
   const onSubmit = async (data) => {
     console.log(data);
-    // img upload to imgbb and get url
-    const imageFile = { image: data.image[0] };
-    const res = await axiosPublic.post(image_hosting_api, imageFile, {
-      headers: {
-        "content-type": "multipart/form-data",
-      },
-    });
-    if (res.data.success) {
-      // send class data to server with img url
-      const classItem = {
-        name: data.name,
-        InstructorName: data.InstructorName,
-        InstructorEmail: data.InstructorEmail,
-        seats: data.seats,
-        price: parseFloat(data.price),
-        status: data.status,
-        category: data.category,
-        image: res.data.data.display_url,
-      };
 
-      const classRes = await axiosSecure.patch(`/class/${_id}`, classItem);
-      console.log(classRes.data);
-      if (classRes.data.modifiedCount > 0) {
-        // reset();
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: `${data.name} is updated to menu`,
-          showConfirmButton: false,
-          timer: 1500,
-        });
+    let imageUrl = image;
+
+    if (data.image && data.image[0]) {
+      const formData = new FormData();
+      formData.append("image", data.image[0]);
+
+      const res = await axiosPublic.post(image_hosting_api, formData, {
+        headers: {
+          "content-type": "multipart/form-data",
+        },
+      });
+
+      if (res.data.success) {
+        imageUrl = res.data.data.display_url;
       }
     }
-    console.log("with img url", res.data);
+
+    // send class data to server with img url
+    const classItem = {
+      name: data.name,
+      InstructorName: data.InstructorName,
+      InstructorEmail: data.InstructorEmail,
+      seats: data.seats,
+      price: parseFloat(data.price),
+      status: data.status,
+      category: data.category,
+      image: imageUrl,
+    };
+
+    const classRes = await axiosSecure.patch(`/class/${_id}`, classItem);
+    console.log(classRes.data);
+    if (classRes.data.modifiedCount > 0) {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: `${data.name} is updated to menu`,
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
   };
 
   return (
