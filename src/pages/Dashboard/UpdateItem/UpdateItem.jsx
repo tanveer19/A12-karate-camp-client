@@ -124,7 +124,7 @@ const UpdateItem = () => {
               <span className="label-text">Class Details</span>
             </label>
             <textarea
-              {...register("details", { required: true })}
+              {...register("details")}
               className="textarea textarea-bordered h-16"
               placeholder="Details"
             ></textarea>
@@ -136,10 +136,15 @@ const UpdateItem = () => {
             </label>
             <input
               type="file"
-              {...register("image", { required: true })}
-              defaultValue={image}
+              {...register("image")}
               className="file-input file-input-bordered "
             />
+            {image && (
+              <div className="mt-2">
+                <p>Previously uploaded image</p>
+                <img src={image} alt="" className="w-32 h-32 object-cover" />
+              </div>
+            )}
           </div>
 
           <div className="form-control flex flex-col ">
@@ -162,7 +167,6 @@ const UpdateItem = () => {
             <input
               className="border rounded p-2 my-2"
               placeholder="Instructor Email "
-              value={user.email}
               {...register("InstructorEmail")}
               defaultValue={InstructorEmail}
             />
@@ -185,7 +189,6 @@ const UpdateItem = () => {
             </label>
             <input
               className="border rounded p-2 my-2"
-              value="pending"
               placeholder="status"
               {...register("status")}
               defaultValue={status}

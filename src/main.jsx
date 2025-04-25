@@ -152,7 +152,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://2-21-a12-summer-camp-server.vercel.app/classes/${params.id}`
+            `https://2-21-a12-summer-camp-server.vercel.app/class/${params.id}`
           ),
       },
       {
