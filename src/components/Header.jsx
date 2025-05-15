@@ -48,6 +48,7 @@ const Header = () => {
           <Link to="/profile">Profile</Link>
         </li>
       )}
+
       {user && (
         <li>
           <Link to={isAdmin ? "/dashboard/adminhome" : "/dashboard/userhome"}>
@@ -56,14 +57,17 @@ const Header = () => {
         </li>
       )}
 
-      <li>
-        <Link to="/dashboard/mycart">
-          <button className="btn gap-2">
-            <FaCartPlus></FaCartPlus>
-            <div className="badge badge-primary">+{cart?.length || 0}</div>
-          </button>
-        </Link>
-      </li>
+      {user && (
+        <li>
+          <Link to="/dashboard/mycart">
+            <button className="btn gap-2">
+              <FaCartPlus></FaCartPlus>
+              <div className="badge badge-primary">+{cart?.length || 0}</div>
+            </button>
+          </Link>
+        </li>
+      )}
+
       {user && (
         <div>
           <img src={user.photoURL} alt="" style={{ width: "60px" }} />

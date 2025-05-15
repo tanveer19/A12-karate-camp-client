@@ -1,4 +1,4 @@
-Ultimate Gym-client
+Karate Camp - client
 
 website features:
 
@@ -7,6 +7,7 @@ website features:
 3. add karate class
 4. sign up / login in website
 5. info about kyokushin karate
+6. Admin can edit classes. Ask me to make you admin if you want to test.
 
 Used packages/ technology name:
 

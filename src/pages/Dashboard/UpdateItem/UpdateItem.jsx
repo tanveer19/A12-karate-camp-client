@@ -72,7 +72,7 @@ const UpdateItem = () => {
       Swal.fire({
         position: "top-end",
         icon: "success",
-        title: `${data.name} is updated to menu`,
+        title: `${data.name} updated successfully`,
         showConfirmButton: false,
         timer: 1500,
       });
